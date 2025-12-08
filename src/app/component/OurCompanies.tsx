@@ -130,7 +130,7 @@ export default function Link() {
                 initial={{ width: 0 }}
                 animate={isHeaderInView ? { width: "140px" } : { width: 0 }}
                 transition={{ duration: 0.8, delay: 0.5, ease: "easeInOut" }}
-                className="h-1 bg-gradient-to-r from-blue-500 to-blue-600 mb-4"
+                className="h-1 bg-gradient-to-r from-blue-800 to-blue-900 mb-4"
               />
             </motion.div>
 
@@ -175,7 +175,7 @@ export default function Link() {
                 transition={{ duration: 0.4, delay: 0.3 }}
                 viewport={{ once: true }}
               >
-                <div className="text-blue-600 text-lg font-bold">
+                <div className="text-blue-900 text-lg font-bold">
                   +{count.employees}
                 </div>
                 <div className="text-gray-600 text-xs">Employees</div>
@@ -187,7 +187,7 @@ export default function Link() {
                 transition={{ duration: 0.4, delay: 0.4 }}
                 viewport={{ once: true }}
               >
-                <div className="text-blue-600 text-lg font-bold">
+                <div className="text-blue-900 text-lg font-bold">
                   +{count.projects}
                 </div>
                 <div className="text-gray-600 text-xs">Projects</div>
@@ -199,7 +199,7 @@ export default function Link() {
                 transition={{ duration: 0.4, delay: 0.5 }}
                 viewport={{ once: true }}
               >
-                <div className="text-blue-600 text-lg font-bold">
+                <div className="text-blue-900 text-lg font-bold">
                   +{count.products}
                 </div>
                 <div className="text-gray-600 text-xs">Product Lines</div>

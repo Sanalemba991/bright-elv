@@ -165,7 +165,7 @@ export default function Slider() {
             whileInView={{ width: 48 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="h-1 bg-blue-600 mx-auto"
+            className="h-1 bg-blue-900 mx-auto"
           ></motion.div>
         </motion.header>
 

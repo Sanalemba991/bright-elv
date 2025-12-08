@@ -44,7 +44,7 @@ export default function Link() {
           </h2>
 
           {/* Tagline */}
-          <p className="text-blue-600 text-lg sm:text-xl font-semibold">
+          <p className="text-blue-900 text-lg sm:text-xl font-semibold">
             PROFESSION . TRUST . SAFETY . INNOVATIVE
           </p>
         </motion.div>
@@ -105,7 +105,7 @@ export default function Link() {
                 whileInView={{ width: 48 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true }}
-                className="h-0.5 bg-blue-600 rounded-full"
+                className="h-0.5 bg-blue-900 rounded-full"
               />
 
               {/* Main Description */}
@@ -168,7 +168,7 @@ export default function Link() {
                 viewport={{ once: true }}
               >
                 <NextLink href="/contact">
-                  <motion.button className="inline-block px-6 py-2.5 text-blue-600 border border-blue-600 hover:bg-blue-700 hover:text-white font-semibold transition-colors duration-300 text-sm sm:text-base cursor-pointer scale-90">
+                  <motion.button className="inline-block px-6 py-2.5 text-blue-900 border border-blue-900 hover:bg-blue-900 hover:text-white font-semibold transition-colors duration-300 text-sm sm:text-base cursor-pointer scale-90">
                     Know More
                   </motion.button>
                 </NextLink>

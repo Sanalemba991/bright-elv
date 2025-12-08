@@ -68,27 +68,19 @@ export default function Testimonial() {
           {/* Text Content */}
           <div className="flex-1 space-y-4">
             <div className="space-y-2">
-              <p className="text-sm md:text-base lg:text-lg font-light text-gray-800 leading-relaxed">
+              <p className="text-sm md:text-base lg:text-m font-light text-gray-800 leading-relaxed">
                 "{currentTestimonial.quote}"
               </p>
             </div>
             
             <div className="pt-2 space-y-1">
-              <p className="text-sm font-semibold text-gray-900">
+              <p className="text-sm font-semibold text-blue-900">
                 {currentTestimonial.name}
               </p>
               <p className="text-xs text-gray-600">
                 {currentTestimonial.position}
               </p>
-              <div className="flex items-center gap-2 pt-1">
-                <div className="flex gap-1">
-                  <div className="w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
-                  <div className="w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
-                  <div className="w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
-                  <div className="w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
-                </div>
-                <span className="text-sm font-bold text-gray-900">{currentTestimonial.company}</span>
-              </div>
+              
             </div>
           </div>
 

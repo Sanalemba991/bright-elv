@@ -2,8 +2,6 @@
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-
-// Logo data with industry categorization
 const logos = [
   {
     name: "Chick-fil-A",
@@ -216,25 +214,25 @@ export default function Client() {
             initial={{ width: 0 }}
             animate={isHeaderInView ? { width: "140px" } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.5, ease: "easeInOut" }}
-            className="h-1 bg-gradient-to-r from-blue-500 to-blue-600 mb-4"
+            className="h-1 bg-gradient-to-r from-blue-800 to-blue-900 mb-4"
           />
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap justify-center gap-2 mb-16 border-b border-gray-200">
+        <div className="flex flex-wrap justify-center hover:cursor-pointer gap-2 mb-16 border-b border-gray-200">
           {industries.map((industry) => (
             <button
               key={industry.id}
               onClick={() => setActiveFilter(industry.id)}
-              className={`px-6 py-3 text-sm font-medium transition-all relative ${
+              className={`px-6 py-3 text-sm hover:cursor-pointer font-medium transition-all relative ${
                 activeFilter === industry.id
-                  ? "text-blue-600"
+                  ? "text-blue-900"
                   : "text-gray-600 hover:text-gray-900"
               }`}
             >
               {industry.label}
               {activeFilter === industry.id && (
-                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600" />
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-900" />
               )}
             </button>
           ))}
@@ -298,7 +296,7 @@ export default function Client() {
               e.stopPropagation();
               handlePrev();
             }}
-            className="absolute left-4 md:left-20 text-white hover:text-gray-300 transition-colors z-50"
+            className="absolute hover:cursor-pointer left-4 md:left-20 text-white hover:text-gray-300 transition-colors z-50"
           >
             <svg
               className="w-12 h-12 md:w-16 md:h-16"
@@ -324,7 +322,7 @@ export default function Client() {
           >
             <button
               onClick={() => setSelectedLogo(null)}
-              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl font-bold"
+              className="absolute top-4 right-4  hover:cursor-pointer text-gray-500 hover:text-gray-700 text-2xl font-bold"
             >
               ✕
             </button>
@@ -350,7 +348,7 @@ export default function Client() {
               e.stopPropagation();
               handleNext();
             }}
-            className="absolute right-4 md:right-20 text-white hover:text-gray-300 transition-colors z-50"
+            className="absolute right-4 hover:cursor-pointer md:right-20 text-white hover:text-gray-300 transition-colors z-50"
           >
             <svg
               className="w-12 h-12 md:w-16 md:h-16"

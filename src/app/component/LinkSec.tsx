@@ -118,7 +118,7 @@ export default function LinkSec() {
             initial={{ width: 0 }}
             animate={isInView ? { width: "180px" } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.5, ease: "easeInOut" }}
-            className="h-1 bg-gradient-to-r from-blue-500 to-blue-600 mx-auto mb-4"
+            className="h-1 bg-gradient-to-r from-blue-900 to-blue-900 mx-auto mb-4"
           />
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -126,7 +126,7 @@ export default function LinkSec() {
             transition={{ duration: 0.6, delay: 0.8 }}
             className="text-sm text-gray-600 uppercase tracking-[0.15em] font-medium"
           >
-            MIDDLE <span className="text-blue-600">EAST</span> AND BEYOND
+            MIDDLE <span className="text-blue-900">EAST</span> AND BEYOND
           </motion.p>
         </motion.div>
 
