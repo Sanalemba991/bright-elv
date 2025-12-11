@@ -196,7 +196,7 @@ export default function ELVSolutions() {
             variants={containerVariants}
             initial="hidden"
             animate={solutionsInView ? "visible" : "hidden"}
-            className="grid grid-cols-1 md:grid-cols-3 gap-5"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5"
           >
             {/* ROW 1: 2 IMAGES (Left-Top + Left-Bottom) + TEXT DATA (Right) */}
 
@@ -205,7 +205,7 @@ export default function ELVSolutions() {
               variants={itemVariants}
               className="relative group overflow-hidden"
             >
-              <div className="relative h-[180px] bg-gray-100">
+              <div className="relative h-[120px] md:h-[180px] bg-gray-100">
                 <Image
                   src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=250&fit=crop&auto=format"
                   alt="CCTV System"
@@ -220,7 +220,7 @@ export default function ELVSolutions() {
               variants={itemVariants}
               className="relative group overflow-hidden"
             >
-              <div className="relative h-[180px] bg-gray-100">
+              <div className="relative h-[120px] md:h-[180px] bg-gray-100">
                 <Image
                   src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=250&fit=crop&auto=format"
                   alt="Network Cabling"
@@ -233,7 +233,7 @@ export default function ELVSolutions() {
             {/* Right Column - Text Data */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col justify-start bg-gray-50 p-6 rounded-sm"
+              className="flex flex-col justify-start bg-gray-50 p-6 rounded-sm h-[120px] md:h-[180px]"
             >
               <h3 className="text-base font-bold text-gray-900 uppercase tracking-wide mb-3">
                 CCTV INSTALLATION
@@ -259,7 +259,7 @@ export default function ELVSolutions() {
             {/* Left Column - Text Data */}
             <motion.div
               variants={itemVariants}
-              className="flex flex-col justify-start bg-gray-50 p-6 rounded-sm"
+              className="flex flex-col justify-start bg-gray-50 p-6 rounded-sm h-[120px] md:h-[180px]"
             >
               <h3 className="text-base font-bold text-gray-900 uppercase tracking-wide mb-3">
                 CCTV MAINTENANCE
@@ -285,7 +285,7 @@ export default function ELVSolutions() {
               variants={itemVariants}
               className="relative group overflow-hidden"
             >
-              <div className="relative h-[180px] bg-gray-100">
+              <div className="relative h-[120px] md:h-[180px] bg-gray-100">
                 <Image
                   src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=500&h=250&fit=crop&auto=format"
                   alt="PABX System"
@@ -300,7 +300,7 @@ export default function ELVSolutions() {
               variants={itemVariants}
               className="relative group overflow-hidden"
             >
-              <div className="relative h-[180px] bg-gray-100">
+              <div className="relative h-[120px] md:h-[180px] bg-gray-100">
                 <Image
                   src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?w=500&h=250&fit=crop&auto=format"
                   alt="Audio Visual Setup"
@@ -315,7 +315,7 @@ export default function ELVSolutions() {
               variants={itemVariants}
               className="relative group overflow-hidden"
             >
-              <div className="relative h-[180px] bg-gray-100">
+              <div className="relative h-[120px] md:h-[180px] bg-gray-100">
                 <Image
                   src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=250&fit=crop&auto=format"
                   alt="Structured Cabling"
@@ -354,7 +354,7 @@ export default function ELVSolutions() {
               variants={itemVariants}
               className="relative group overflow-hidden"
             >
-              <div className="relative h-[180px] bg-gray-100">
+              <div className="relative h-[120px] md:h-[180px] bg-gray-100">
                 <Image
                   src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=250&fit=crop&auto=format"
                   alt="ELV Equipment"
@@ -393,7 +393,7 @@ export default function ELVSolutions() {
               variants={itemVariants}
               className="relative group overflow-hidden"
             >
-              <div className="relative h-[180px] bg-gray-100">
+              <div className="relative h-[120px] md:h-[180px] bg-gray-100">
                 <Image
                   src="https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=500&h=250&fit=crop&auto=format"
                   alt="Communication System"
