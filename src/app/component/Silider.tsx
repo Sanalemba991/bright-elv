@@ -105,45 +105,49 @@ export default function Slider() {
   const imageData: ImageItem[] = [
     {
       id: 1,
-      title: "HUAWEI nova 14 Pro",
-      subtitle: "Pro Your Portrait",
-      tag: "PRODUCT",
+      title: "CCTV Installation",
+      subtitle:
+        "Professional CCTV system installation for residential and commercial properties with high-definition cameras and advanced monitoring.",
+      tag: "SECURITY",
       imageUrl:
-        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      link: "https://consumer.huawei.com/en/phones/nova14-pro/",
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=250&fit=crop&auto=format",
+      link: "/elv-solution/cctv-installation",
       large: true,
     },
     {
       id: 2,
-      title:
-        "GAC Group: Enabling Intelligent, Autonomous Driving with an AI Data Lake",
-      subtitle: "SUCCESS STORY",
-      tag: "SUCCESS STORY",
+      title: "CCTV Maintenance",
+      subtitle:
+        "Regular maintenance and support services to keep your CCTV systems running at peak performance with timely inspections and repairs.",
+      tag: "MAINTENANCE",
       imageUrl:
-        "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      link: "https://www.gac-group.com/innovation/ai-data-lake",
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=250&fit=crop&auto=format",
+      link: "/elv-solution/cctv-maintenance",
       large: false,
     },
     {
       id: 3,
-      title: "Smart Home Ecosystem",
-      subtitle: "Seamless Connectivity Across All Devices",
-      tag: "INNOVATION",
+      title: "Structured Cabling",
+      subtitle:
+        "High-quality structured cabling solutions for modern network infrastructure, including Cat6, Cat6A, and fiber optic installations.",
+      tag: "NETWORK",
       imageUrl:
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      link: "https://example.com/smart-home",
+        "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=500&h=250&fit=crop&auto=format",
+      link: "/elv-solution/structure-cabling",
       large: false,
     },
     {
       id: 4,
-      title: "Cloud Computing Solutions",
-      subtitle: "Scalable Infrastructure for Modern Businesses",
-      tag: "TECHNOLOGY",
+      title: "PABX Systems",
+      subtitle:
+        "Professional Private Automatic Branch Exchange systems for efficient and scalable business communications with advanced features.",
+      tag: "COMMUNICATION",
       imageUrl:
-        "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-      link: "https://example.com/cloud-solutions",
+        "https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?w=500&h=250&fit=crop&auto=format",
+      link: "/elv-solution/pabx",
       large: true,
     },
+    
   ];
 
   return (

@@ -1,6 +1,7 @@
 "use client";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Variants } from "framer-motion";
 
 export default function AboutUs() {
   // Refs for all sections
@@ -17,7 +18,7 @@ export default function AboutUs() {
   const commitmentsInView = useInView(commitmentsRef, { once: true, amount: 0.2 });
 
   // Animation variants for commitment items - coming from above
-  const commitmentItemVariants = {
+  const commitmentItemVariants: Variants = {
     hidden: { opacity: 0, y: -40 },
     visible: { 
       opacity: 1, 
@@ -30,7 +31,7 @@ export default function AboutUs() {
   };
 
   // Animation for the vertical line - growing from top
-  const lineVariants = {
+  const lineVariants: Variants = {
     hidden: { scaleY: 0, transformOrigin: "top" },
     visible: { 
       scaleY: 1,
@@ -42,7 +43,7 @@ export default function AboutUs() {
   };
 
   // Animation for card items
-  const cardVariants = {
+  const cardVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: { 
       opacity: 1, 
@@ -55,7 +56,7 @@ export default function AboutUs() {
   };
 
   // Animation for gallery images
-  const imageVariants = {
+  const imageVariants: Variants = {
     hidden: { opacity: 0, scale: 0.9 },
     visible: { 
       opacity: 1, 
@@ -68,9 +69,9 @@ export default function AboutUs() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className=" bg-white">
       {/* Main Content */}
-      <main className="px-4 py-12 md:px-8 lg:px-16 max-w-6xl mx-auto">
+      <main className="w-full py-16 px-4 md:px-8 lg:px-8 max-w-7xl mx-auto">
         {/* Intro Section */}
         <div ref={introRef}>
           <motion.h1 
