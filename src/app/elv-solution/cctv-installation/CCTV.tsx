@@ -5,7 +5,47 @@ import Navbar from "@/app/component/Navbar";
 import { motion } from "framer-motion";
 import { Code, Target, Zap, Headphones, Users, Award } from "lucide-react";
 
-export default function Audio() {
+import { TrendingUp, Shield, Clock } from "lucide-react";
+
+export default function CCTV() {
+  const features = [
+    {
+      icon: <TrendingUp className="w-6 h-6" />,
+      title: "Drive Consistent Revenue Growth",
+      description:
+        "Boost sales by converting visitors into paying customers with a compact site designed for impact.",
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: "Establish Credibility",
+      description:
+        "Gain partner confidence with a professional, focused web presence.",
+    },
+    {
+      icon: <Clock className="w-6 h-6" />,
+      title: "Save Time",
+      description:
+        "Launch a proven, optimized website quickly and efficiently.",
+    },
+    {
+      icon: <Target className="w-6 h-6" />,
+      title: "Scale with Funnels",
+      description:
+        "Use established strategies that keep your sales pipeline active.",
+    },
+    {
+      icon: <Zap className="w-6 h-6" />,
+      title: "Outperform Competitors",
+      description: "Fast-loading, SEO-friendly pages that engage visitors.",
+    },
+    {
+      icon: <Award className="w-6 h-6" />,
+      title: "Risk-Managed",
+      description:
+        "Measurable improvements in conversion rates within 90 days.",
+    },
+  ];
+
   const cards = [
     {
       icon: Code,
@@ -95,7 +135,7 @@ export default function Audio() {
 
   return (
     <>
-    <Navbar />
+      <Navbar />
       {/* HERO SECTION */}
       <div className="bg-black font-sans">
         <section className="relative h-auto md:h-[550px] lg:h-[650px] xl:h-[780px] overflow-visible">
@@ -114,31 +154,43 @@ export default function Audio() {
               <motion.h1
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                transition={{
+                  duration: 1,
+                  delay: 0.3,
+                  ease: [0.25, 0.1, 0.25, 1],
+                }}
                 className="text-2xl sm:text-3xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold leading-tight max-w-2xl"
               >
-                Enhancing Collaboration with Advanced AV Solutions in Dubai
+                Secure Your Premises with Brightelv Advanced CCTV Installation
+                Services in Dubai
               </motion.h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                transition={{
+                  duration: 1,
+                  delay: 0.5,
+                  ease: [0.25, 0.1, 0.25, 1],
+                }}
                 className="mt-4 md:mt-3 lg:mt-3 xl:mt-4 text-gray-400 text-sm sm:text-base md:text-sm lg:text-base xl:text-lg max-w-lg leading-relaxed"
               >
-                Welcome to Brightelv, your trusted provider of comprehensive
-                audio-visual solutions in Dubai. We bring the power of seamless
-                connectivity and clear communication to businesses,
-                organizations, and venues throughout the UAE. As a leading AV
-                solutions provider, we're committed to delivering customized,
-                cutting-edge technology that enhances your communication and
-                collaboration experiences.
+                In today's world, security is paramount. BrightELV offers
+                top-notch CCTV installation services in Dubai, safeguarding your
+                properties around the clock with state-of-the-art surveillance
+                systems. Our reliable systems provide real-time monitoring and
+                recording, ensuring peace of mind against theft, vandalism, and
+                unauthorized access.
               </motion.p>
 
               <motion.button
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.7,
+                  ease: [0.25, 0.1, 0.25, 1],
+                }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="mt-6 md:mt-4 lg:mt-4 xl:mt-6 inline-block bg-yellow-400 text-black font-semibold text-sm md:text-xs lg:text-sm xl:text-base px-6 md:px-3 lg:px-4 xl:px-4 py-2.5 md:py-1.5 lg:py-2 xl:py-2 rounded-full shadow-lg hover:bg-yellow-300 transition-colors"
@@ -150,14 +202,22 @@ export default function Audio() {
             <motion.div
               initial={{ opacity: 0, x: 100, rotateY: 10 }}
               animate={{ opacity: 1, x: 0, rotateY: 0 }}
-              transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+              transition={{
+                duration: 1.2,
+                delay: 0.4,
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
               className="hidden mr-9 md:block absolute right-0 top-[65%] -translate-y-1/2 md:w-[30%] lg:w-[32%] xl:w-[36%] md:h-[90%] lg:h-[92%] xl:h-[96%]"
             >
               <div className="relative w-full h-full">
                 <motion.div
                   initial={{ scale: 1.2 }}
                   animate={{ scale: 1 }}
-                  transition={{ duration: 1.2, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+                  transition={{
+                    duration: 1.2,
+                    delay: 0.6,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
                   className="relative w-full h-full"
                 >
                   <Image
@@ -207,14 +267,19 @@ export default function Audio() {
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
             className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 mb-2"
           >
-            Why choose us for Audio visual
-            <span className="text-blue-900"> solutions</span>
+            Why choose
+            <span className="text-blue-900"> Brightelv</span> for CCTV
+            installation
           </motion.h2>
           <motion.div
             initial={{ width: 0, opacity: 0 }}
             whileInView={{ width: 48, opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1], delay: 0.4 }}
+            transition={{
+              duration: 1.2,
+              ease: [0.25, 0.1, 0.25, 1],
+              delay: 0.4,
+            }}
             className="h-1 bg-blue-900 mx-auto"
           ></motion.div>
         </motion.header>
@@ -257,40 +322,48 @@ export default function Audio() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.4 }}
+                  transition={{
+                    duration: 1,
+                    ease: [0.25, 0.1, 0.25, 1],
+                    delay: 0.4,
+                  }}
                   className="text-lg md:text-xl lg:text-xl font-semibold text-gray-900 mt-2 mb-3 md:mb-4"
                 >
-                  Design and Integration
+                  Expert Technicians
                 </motion.h3>
 
                 <motion.p
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
+                  transition={{
+                    duration: 1,
+                    ease: [0.25, 0.1, 0.25, 1],
+                    delay: 0.5,
+                  }}
                   className="text-sm md:text-base text-gray-700 mb-3 md:mb-4 leading-relaxed"
                 >
-                  Our expert team collaborates with you to design and integrate
-                  custom audio-video systems tailored to your unique needs and
-                  budget. At Brightelv, we deliver end-to-end AV solutions for
-                  conference rooms, boardrooms, classrooms, and large
-                  auditoriums — ensuring clear communication, seamless
-                  presentations, and enhanced audience engagement.
+                  At Brightelv, our certified and experienced technicians are
+                  dedicated to providing high-quality CCTV installation
+                  services. Their expertise ensures that your system is
+                  installed correctly and operates efficiently.
                 </motion.p>
 
                 <motion.p
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.6 }}
+                  transition={{
+                    duration: 1,
+                    ease: [0.25, 0.1, 0.25, 1],
+                    delay: 0.6,
+                  }}
                   className="text-sm md:text-base text-gray-700 mb-3 md:mb-4 leading-relaxed"
                 >
-                  From system design and professional installation to
-                  maintenance, support, and user training, we handle every stage
-                  with precision. Equipped with high-quality AV products such as
-                  displays, video walls, projectors, cables, racks, and mounting
-                  solutions, we ensure reliable performance and long-lasting
-                  results.
+                  We leverage the latest advancements in CCTV technology,
+                  offering features such as high-definition video, infrared
+                  night vision, motion detection, and remote access. This
+                  ensures comprehensive security for your property.
                 </motion.p>
               </motion.div>
             </div>
@@ -317,24 +390,30 @@ export default function Audio() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.3 }}
+                  transition={{
+                    duration: 1,
+                    ease: [0.25, 0.1, 0.25, 1],
+                    delay: 0.3,
+                  }}
                   className="text-lg md:text-xl lg:text-xl font-semibold text-gray-900 mt-2 mb-3 md:mb-4"
                 >
-                  Our AV Solutions & Services
+                  Why choose Brightelv for CCTV installation
                 </motion.h3>
                 <motion.p
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.4 }}
+                  transition={{
+                    duration: 1,
+                    ease: [0.25, 0.1, 0.25, 1],
+                    delay: 0.4,
+                  }}
                   className="text-sm md:text-base text-gray-700 mb-4 md:mb-6 leading-relaxed"
                 >
-                  Our solutions are built to scale, integrate with existing
-                  infrastructures, and meet the security and reliability
-                  requirements of modern businesses. We offer a comprehensive
-                  range of AV solutions, including system design and
-                  integration, installation services, maintenance and support,
-                  equipment rentals, and training and consultation.
+                  As a leading CCTV supplier in Dubai, Brightelv caters to
+                  diverse security needs for homes, offices, retail stores, and
+                  industrial facilities. Our advanced CCTV solutions offer
+                  comprehensive coverage and unmatched reliability.
                 </motion.p>
 
                 <motion.div
@@ -348,14 +427,18 @@ export default function Audio() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
+                    transition={{
+                      duration: 0.8,
+                      ease: [0.25, 0.1, 0.25, 1],
+                      delay: 0.5,
+                    }}
                     className="p-2 bg-gray-50 rounded-md hover:bg-gray-100 transition-all duration-300 group cursor-default"
                   >
                     <h4 className="font-semibold text-gray-900 mb-1 group-hover:text-blue-900 transition-colors text-sm md:text-sm">
-                      System Design
+                      Competitive Pricing
                     </h4>
                     <p className="text-gray-700 text-[12px] leading-snug">
-                      Consultation, CAD layouts, and custom system architecture.
+                      Cost-effective solutions without compromising on quality.
                     </p>
                   </motion.div>
 
@@ -363,14 +446,18 @@ export default function Audio() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.6 }}
+                    transition={{
+                      duration: 0.8,
+                      ease: [0.25, 0.1, 0.25, 1],
+                      delay: 0.6,
+                    }}
                     className="p-2 bg-gray-50 rounded-md hover:bg-gray-100 transition-all duration-300 group cursor-default"
                   >
                     <h4 className="font-semibold text-gray-900 mb-1 group-hover:text-blue-900 transition-colors text-sm md:text-sm">
-                      Installation & Cabling
+                      Focus on Quality
                     </h4>
                     <p className="text-gray-700 text-[12px] leading-snug">
-                      Professional installation and precise device setup.
+                      Highest standard systems for unparalleled security.
                     </p>
                   </motion.div>
 
@@ -378,14 +465,18 @@ export default function Audio() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.7 }}
+                    transition={{
+                      duration: 0.8,
+                      ease: [0.25, 0.1, 0.25, 1],
+                      delay: 0.7,
+                    }}
                     className="p-2 bg-gray-50 rounded-md hover:bg-gray-100 transition-all duration-300 group cursor-default"
                   >
                     <h4 className="font-semibold text-gray-900 mb-1 group-hover:text-blue-900 transition-colors text-sm md:text-sm">
-                      Control Systems
+                      Latest Technology
                     </h4>
                     <p className="text-gray-700 text-[12px] leading-snug">
-                      Room automation and AV equipment training.
+                      HD video, night vision, motion detection, remote access.
                     </p>
                   </motion.div>
 
@@ -393,14 +484,19 @@ export default function Audio() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.8 }}
+                    transition={{
+                      duration: 0.8,
+                      ease: [0.25, 0.1, 0.25, 1],
+                      delay: 0.8,
+                    }}
                     className="p-2 bg-gray-50 rounded-md hover:bg-gray-100 transition-all duration-300 group cursor-default"
                   >
                     <h4 className="font-semibold text-gray-900 mb-1 group-hover:text-blue-900 transition-colors text-sm md:text-sm">
                       Maintenance & Support
                     </h4>
                     <p className="text-gray-700 text-[12px] leading-snug">
-                      Service contracts, remote support, and regular check-ups.
+                      Regular maintenance and system upgrades for optimal
+                      performance.
                     </p>
                   </motion.div>
                 </motion.div>
@@ -429,151 +525,55 @@ export default function Audio() {
         </motion.section>
 
         {/* PORTFOLIO SECTION */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 1 }}
-          className="py-16 bg-white"
+        <motion.section
+          initial="initial"
+          whileInView="whileInView"
+          variants={staggerContainer}
+          viewport={{ once: true, amount: 0.2 }}
+          className="bg-gray-50 text-black py-12"
         >
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.header
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
-              className="text-center mb-6 md:mb-8 lg:mb-8 px-4"
+          <div className="max-w-4xl mx-auto px-4 text-center">
+            <motion.h2
+              variants={fadeInUp}
+              className="text-2xl md:text-3xl font-bold mb-4 text-black"
             >
-              <motion.h2
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
-                className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 mb-2"
-              >
-                Audio<span className="text-blue-900"> solutions</span>
-              </motion.h2>
-              <motion.div
-                initial={{ width: 0, opacity: 0 }}
-                whileInView={{ width: 48, opacity: 1 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1], delay: 0.4 }}
-                className="h-1 bg-blue-900 mx-auto"
-              ></motion.div>
-            </motion.header>
-            
-            {/* Top row: 3 cards */}
+              LAUNCH A WEBSITE THAT POWERS YOUR STARTUP'S GROWTH
+            </motion.h2>
+
+            <motion.p
+              variants={fadeInUp}
+              className="text-gray-600 text-sm mb-8"
+            >
+              Unlock a high-converting, revenue-generating website that becomes
+              your startup's most valuable asset.
+            </motion.p>
+
             <motion.div
-              variants={staggerContainer}
-              initial="initial"
-              whileInView="whileInView"
-              viewport={{ once: true, amount: 0.1 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8"
+              variants={fadeInUp}
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
             >
-              {/* Card 1 */}
-              <motion.div variants={cardVariant} className="bg-white shadow-md overflow-hidden flex flex-col">
-                <img
-                  src="/images/portfolio/bag.jpg"
-                  alt="The Ultimate Theme"
-                  className="w-full h-56 object-cover"
-                />
-                <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-1">
-                    The Ultimate Theme
-                  </h3>
-                  <span className="text-xs text-gray-400 tracking-widest mb-3 uppercase">
-                    Featured Projects
-                  </span>
-                  <p className="text-gray-600 text-sm flex-1">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus quis nunc urna. Maecenas id dolor at libero
-                    accumsan facilisis…
-                  </p>
-                </div>
-              </motion.div>
-              
-              {/* Card 2 */}
-              <motion.div variants={cardVariant} className="bg-white shadow-md overflow-hidden flex flex-col">
-                <img
-                  src="/images/portfolio/folder.jpg"
-                  alt="New Collaboration"
-                  className="w-full h-56 object-cover"
-                />
-                <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-1">
-                    New Collaboration
-                  </h3>
-                  <span className="text-xs text-gray-400 tracking-widest mb-3 uppercase">
-                    Featured Projects
-                  </span>
-                  <p className="text-gray-600 text-sm flex-1">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus quis nunc urna. Maecenas id dolor at libero
-                    accumsan facilisis…
-                  </p>
-                </div>
-              </motion.div>
-              
-              {/* Card 3 */}
-              <motion.div variants={cardVariant} className="bg-white shadow-md overflow-hidden flex flex-col">
-                <img
-                  src="/images/portfolio/identity.jpg"
-                  alt="Brand Identity"
-                  className="w-full h-56 object-cover"
-                />
-                <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-1">
-                    Brand Identity
-                  </h3>
-                  <span className="text-xs text-gray-400 tracking-widest mb-3 uppercase">
-                    Featured Projects
-                  </span>
-                  <p className="text-gray-600 text-sm flex-1">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus quis nunc urna. Maecenas id dolor at libero
-                    accumsan facilisis…
-                  </p>
-                </div>
-              </motion.div>
-            </motion.div>
-            
-            {/* Bottom row: 1 card centered */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
-              className="flex justify-center"
-            >
-              <div className="bg-white shadow-md overflow-hidden flex flex-col w-full md:w-1/3">
-                <img
-                  src="/images/portfolio/speaker.jpg"
-                  alt="Speaker Innovation"
-                  className="w-full h-56 object-cover"
-                />
-                <div className="p-6 flex-1 flex flex-col">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-1">
-                    Speaker Innovation
-                  </h3>
-                  <span className="text-xs text-gray-400 tracking-widest mb-3 uppercase">
-                    Featured Projects
-                  </span>
-                  <p className="text-gray-600 text-sm flex-1">
-                    Pioneering the latest in speaker technology for immersive audio experiences.
-                  </p>
-                </div>
-              </div>
+              {features.map((feature, idx) => (
+                <motion.div
+                  key={idx}
+                  variants={cardVariant}
+                  className="p-4 rounded-md bg-white border border-gray-200 shadow-sm"
+                >
+                  <div className="text-orange-500 mb-2">{feature.icon}</div>
+                  <h4 className="text-sm font-semibold mb-1 text-black">
+                    {feature.title}
+                  </h4>
+                  <p className="text-gray-600 text-xs">{feature.description}</p>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
-        </motion.div>
-
-        {/* SPLIT CALLOUT SECTION */}
+        </motion.section>
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 1 }}
-          className="min-h-screen flex items-center justify-center"
+          className="mt-8 flex items-center justify-center"
         >
           <div className="w-full flex flex-col md:flex-row min-h-screen">
             <motion.div
@@ -602,41 +602,51 @@ export default function Audio() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                  transition={{
+                    duration: 1,
+                    delay: 0.3,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
                   className="text-blue-200 text-sm tracking-wider uppercase font-medium"
                 >
-                  Integrate with Expert AV Solutions
+                  Protect What Matters Most
                 </motion.p>
 
                 <motion.h1
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                  transition={{
+                    duration: 1,
+                    delay: 0.4,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
                   className="text-white text-4xl md:text-5xl font-bold leading-tight"
                 >
-                  Let's Work Together
+                  Contact Us Today
                 </motion.h1>
 
                 <motion.p
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                  transition={{
+                    duration: 1,
+                    delay: 0.5,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
                   className="text-blue-100 text-lg leading-relaxed"
                 >
-                  Are you interested in implementing advanced audio-visual
-                  technology solutions? Let's start the conversation and
-                  transform the way you communicate and collaborate with
-                  cutting-edge AV systems.
+                  Ready to enhance your security with Brightelv's advanced CCTV
+                  installation services? Contact our expert team today to
+                  discuss your security needs and get a customized solution
+                  tailored to your requirements.
                 </motion.p>
 
                 <motion.button
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                 
-                 
                   className="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 transform shadow-lg"
                 >
                   Connect With Us
