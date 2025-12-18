@@ -2,47 +2,70 @@
 import Image from "next/image";
 import React from "react";
 import Navbar from "@/app/component/Navbar";
-import { motion } from "framer-motion";
-import { Code, Target, Zap, Headphones, Users, Award } from "lucide-react";
-
-import { TrendingUp, Shield, Clock } from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { Variants, Transition } from "framer-motion";
+import {
+  Code,
+  Target,
+  Zap,
+  Headphones,
+  Users,
+  Award,
+  TrendingUp,
+  Shield,
+  DollarSign,
+} from "lucide-react";
 
 export default function CCTV() {
+  // Refs for scroll-triggered animations
+  const section01Ref = useRef(null);
+  const section02Ref = useRef(null);
+  const section03Ref = useRef(null);
+  const section04Ref = useRef(null);
+
+  // Check if sections are in view
+  const isSection01InView = useInView(section01Ref, {
+    once: true,
+    margin: "-100px",
+  });
+  const isSection02InView = useInView(section02Ref, {
+    once: true,
+    margin: "-100px",
+  });
+  const isSection03InView = useInView(section03Ref, {
+    once: true,
+    margin: "-100px",
+  });
+  const isSection04InView = useInView(section04Ref, {
+    once: true,
+    margin: "-100px",
+  });
+
   const features = [
     {
-      icon: <TrendingUp className="w-6 h-6" />,
-      title: "Drive Consistent Revenue Growth",
+      icon: <Users className="w-6 h-6" />,
+      title: "Expert Technicians",
       description:
-        "Boost sales by converting visitors into paying customers with a compact site designed for impact.",
+        "At Brightelv, our certified and experienced technicians are dedicated to providing high-quality CCTV installation services. Their expertise ensures that your system is installed correctly and operates efficiently.",
+    },
+    {
+      icon: <Code className="w-6 h-6" />,
+      title: "Latest Technology",
+      description:
+        "We leverage the latest advancements in CCTV technology, offering features such as high-definition video, infrared night vision, motion detection, and remote access. This ensures comprehensive security for your property.",
+    },
+    {
+      icon: <DollarSign className="w-6 h-6" />,
+      title: "Competitive Pricing",
+      description:
+        "Brightelv offers cost-effective CCTV installation solutions without compromising on quality. Our competitive pricing ensures that you receive the best value for your investment, making top-notch security accessible to all",
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "Establish Credibility",
+      title: "Focus on Quality",
       description:
-        "Gain partner confidence with a professional, focused web presence.",
-    },
-    {
-      icon: <Clock className="w-6 h-6" />,
-      title: "Save Time",
-      description:
-        "Launch a proven, optimized website quickly and efficiently.",
-    },
-    {
-      icon: <Target className="w-6 h-6" />,
-      title: "Scale with Funnels",
-      description:
-        "Use established strategies that keep your sales pipeline active.",
-    },
-    {
-      icon: <Zap className="w-6 h-6" />,
-      title: "Outperform Competitors",
-      description: "Fast-loading, SEO-friendly pages that engage visitors.",
-    },
-    {
-      icon: <Award className="w-6 h-6" />,
-      title: "Risk-Managed",
-      description:
-        "Measurable improvements in conversion rates within 90 days.",
+        "Quality is at the core of everything we do. From selecting the best equipment to meticulous installation practices, Brightelv ensures that your CCTV system is of the highest standard, offering you unparalleled security.",
     },
   ];
 
@@ -86,51 +109,45 @@ export default function CCTV() {
   ];
 
   // Enhanced animation variants
-  const fadeInUp = {
-    initial: { opacity: 0, y: 60 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, margin: "-100px" },
-    transition: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
+  const fadeInUp: Variants = {
+    hidden: { opacity: 0, y: 60 },
+    visible: { opacity: 1, y: 0 },
   };
 
-  const fadeInLeft = {
-    initial: { opacity: 0, x: -60 },
-    whileInView: { opacity: 1, x: 0 },
-    viewport: { once: true, margin: "-100px" },
-    transition: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
+  const fadeInLeft: Variants = {
+    hidden: { opacity: 0, x: -60 },
+    visible: { opacity: 1, x: 0 },
   };
 
-  const fadeInRight = {
-    initial: { opacity: 0, x: 60 },
-    whileInView: { opacity: 1, x: 0 },
-    viewport: { once: true, margin: "-100px" },
-    transition: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
+  const fadeInRight: Variants = {
+    hidden: { opacity: 0, x: 60 },
+    visible: { opacity: 1, x: 0 },
   };
 
-  const scaleIn = {
-    initial: { opacity: 0, scale: 0.8 },
-    whileInView: { opacity: 1, scale: 1 },
-    viewport: { once: true, margin: "-100px" },
-    transition: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
+  const scaleIn: Variants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1 },
   };
 
-  const staggerContainer = {
-    initial: { opacity: 0 },
-    whileInView: {
+  const staggerContainer: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
-        delayChildren: 0.2,
+        staggerChildren: 0.2,
+        delayChildren: 0.1,
       },
     },
-    viewport: { once: true, margin: "-100px" },
   };
 
-  const cardVariant = {
-    initial: { opacity: 0, y: 40 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, margin: "-50px" },
-    transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] },
+  const cardVariant: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const transitionProps: Transition = {
+    duration: 0.8,
+    ease: [0.25, 0.1, 0.25, 1],
   };
 
   return (
@@ -267,9 +284,8 @@ export default function CCTV() {
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
             className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 mb-2"
           >
-            Why choose
-            <span className="text-blue-900"> Brightelv</span> for CCTV
-            installation
+            Reliable CCTV security services by Bright
+            <span className="text-blue-900">elv</span> in Dubai
           </motion.h2>
           <motion.div
             initial={{ width: 0, opacity: 0 }}
@@ -302,7 +318,7 @@ export default function CCTV() {
                   ease: [0.25, 0.1, 0.25, 1],
                   opacity: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
                 }}
-                className="relative aspect-[16/10] bg-gray-900 overflow-hidden rounded-lg shadow-2xl"
+                className="relative aspect-[16/10] bg-gray-900 overflow-hidden shadow-2xl"
               >
                 <Image
                   src="/images/OurCompanies.png"
@@ -329,7 +345,8 @@ export default function CCTV() {
                   }}
                   className="text-lg md:text-xl lg:text-xl font-semibold text-gray-900 mt-2 mb-3 md:mb-4"
                 >
-                  Expert Technicians
+                  Safeguard your property with Bright ELV's smart CCTV
+                  solutions.
                 </motion.h3>
 
                 <motion.p
@@ -343,27 +360,13 @@ export default function CCTV() {
                   }}
                   className="text-sm md:text-base text-gray-700 mb-3 md:mb-4 leading-relaxed"
                 >
-                  At Brightelv, our certified and experienced technicians are
-                  dedicated to providing high-quality CCTV installation
-                  services. Their expertise ensures that your system is
-                  installed correctly and operates efficiently.
-                </motion.p>
-
-                <motion.p
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 1,
-                    ease: [0.25, 0.1, 0.25, 1],
-                    delay: 0.6,
-                  }}
-                  className="text-sm md:text-base text-gray-700 mb-3 md:mb-4 leading-relaxed"
-                >
-                  We leverage the latest advancements in CCTV technology,
-                  offering features such as high-definition video, infrared
-                  night vision, motion detection, and remote access. This
-                  ensures comprehensive security for your property.
+                  CCTV installation in Dubai.In today's world, security is
+                  paramount. BrightELV offers top-notch CCTV installation
+                  services in Dubai, safeguarding your properties around the
+                  clock with state-of-the-art surveillance systems. Our reliable
+                  systems provide real-time monitoring and recording, ensuring
+                  peace of mind against theft, vandalism, and unauthorized
+                  access.
                 </motion.p>
               </motion.div>
             </div>
@@ -397,7 +400,7 @@ export default function CCTV() {
                   }}
                   className="text-lg md:text-xl lg:text-xl font-semibold text-gray-900 mt-2 mb-3 md:mb-4"
                 >
-                  Why choose Brightelv for CCTV installation
+                  Shield your site with Bright ELV's modern CCTV installation.
                 </motion.h3>
                 <motion.p
                   initial={{ opacity: 0, y: 30 }}
@@ -413,93 +416,13 @@ export default function CCTV() {
                   As a leading CCTV supplier in Dubai, Brightelv caters to
                   diverse security needs for homes, offices, retail stores, and
                   industrial facilities. Our advanced CCTV solutions offer
-                  comprehensive coverage and unmatched reliability.
+                  comprehensive coverage and unmatched reliability. With
+                  cutting-edge technology and professional installation, we rank
+                  among the top CCTV companies in Dubai. For those concerned
+                  about cost, our competitive CCTV installation prices in Dubai
+                  ensure you get the best value. Trust Brightelv to protect what
+                  matters most with advanced systems and professional expertise.
                 </motion.p>
-
-                <motion.div
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.5 }}
-                  className="grid gap-2 sm:grid-cols-2 lg:order-1"
-                >
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.8,
-                      ease: [0.25, 0.1, 0.25, 1],
-                      delay: 0.5,
-                    }}
-                    className="p-2 bg-gray-50 rounded-md hover:bg-gray-100 transition-all duration-300 group cursor-default"
-                  >
-                    <h4 className="font-semibold text-gray-900 mb-1 group-hover:text-blue-900 transition-colors text-sm md:text-sm">
-                      Competitive Pricing
-                    </h4>
-                    <p className="text-gray-700 text-[12px] leading-snug">
-                      Cost-effective solutions without compromising on quality.
-                    </p>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.8,
-                      ease: [0.25, 0.1, 0.25, 1],
-                      delay: 0.6,
-                    }}
-                    className="p-2 bg-gray-50 rounded-md hover:bg-gray-100 transition-all duration-300 group cursor-default"
-                  >
-                    <h4 className="font-semibold text-gray-900 mb-1 group-hover:text-blue-900 transition-colors text-sm md:text-sm">
-                      Focus on Quality
-                    </h4>
-                    <p className="text-gray-700 text-[12px] leading-snug">
-                      Highest standard systems for unparalleled security.
-                    </p>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.8,
-                      ease: [0.25, 0.1, 0.25, 1],
-                      delay: 0.7,
-                    }}
-                    className="p-2 bg-gray-50 rounded-md hover:bg-gray-100 transition-all duration-300 group cursor-default"
-                  >
-                    <h4 className="font-semibold text-gray-900 mb-1 group-hover:text-blue-900 transition-colors text-sm md:text-sm">
-                      Latest Technology
-                    </h4>
-                    <p className="text-gray-700 text-[12px] leading-snug">
-                      HD video, night vision, motion detection, remote access.
-                    </p>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{
-                      duration: 0.8,
-                      ease: [0.25, 0.1, 0.25, 1],
-                      delay: 0.8,
-                    }}
-                    className="p-2 bg-gray-50 rounded-md hover:bg-gray-100 transition-all duration-300 group cursor-default"
-                  >
-                    <h4 className="font-semibold text-gray-900 mb-1 group-hover:text-blue-900 transition-colors text-sm md:text-sm">
-                      Maintenance & Support
-                    </h4>
-                    <p className="text-gray-700 text-[12px] leading-snug">
-                      Regular maintenance and system upgrades for optimal
-                      performance.
-                    </p>
-                  </motion.div>
-                </motion.div>
               </motion.div>
 
               <motion.div
@@ -511,7 +434,7 @@ export default function CCTV() {
                   ease: [0.25, 0.1, 0.25, 1],
                   opacity: { duration: 1, ease: [0.25, 0.1, 0.25, 1] },
                 }}
-                className="relative aspect-[16/11] bg-gray-900 overflow-hidden rounded-2xl shadow-2xl lg:order-2 min-h-[260px] md:min-h-[340px] lg:min-h-[400px]"
+                className="relative aspect-[16/11] bg-gray-900 overflow-hidden  shadow-2xl lg:order-2 min-h-[260px] md:min-h-[340px] lg:min-h-[400px]"
               >
                 <Image
                   src="/images/audio/audio.jpg"
@@ -530,131 +453,265 @@ export default function CCTV() {
           whileInView="whileInView"
           variants={staggerContainer}
           viewport={{ once: true, amount: 0.2 }}
-          className="bg-gray-50 text-black py-12"
+          className="bg-gray-50 text-black py-20 md:py-28"
         >
-          <div className="max-w-4xl mx-auto px-4 text-center">
+          <div className="max-w-5xl mx-auto px-6 text-center">
             <motion.h2
-              variants={fadeInUp}
-              className="text-2xl md:text-3xl font-bold mb-4 text-black"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{
+                duration: 1,
+                ease: [0.25, 0.1, 0.25, 1],
+                delay: 0.2,
+              }}
+              className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 mb-2"
             >
-              LAUNCH A WEBSITE THAT POWERS YOUR STARTUP'S GROWTH
+              Why choose Bright<span className="text-blue-900">elv</span> for
+              CCTV installation
             </motion.h2>
-
-            <motion.p
-              variants={fadeInUp}
-              className="text-gray-600 text-sm mb-8"
-            >
-              Unlock a high-converting, revenue-generating website that becomes
-              your startup's most valuable asset.
-            </motion.p>
+            <motion.div
+              initial={{ width: 0, opacity: 0 }}
+              whileInView={{ width: 48, opacity: 1 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{
+                duration: 1.2,
+                ease: [0.25, 0.1, 0.25, 1],
+                delay: 0.4,
+              }}
+              className="h-1 bg-blue-900 mx-auto"
+            ></motion.div>
 
             <motion.div
-              variants={fadeInUp}
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+              initial="hidden"
+              whileInView="visible"
+              variants={staggerContainer}
+              viewport={{ once: true, amount: 0.2, margin: "-100px" }}
+              className="grid grid-cols-1 mt-12 sm:grid-cols-2 lg:grid-cols-3 gap-6"
             >
-              {features.map((feature, idx) => (
-                <motion.div
-                  key={idx}
-                  variants={cardVariant}
-                  className="p-4 rounded-md bg-white border border-gray-200 shadow-sm"
-                >
-                  <div className="text-orange-500 mb-2">{feature.icon}</div>
-                  <h4 className="text-sm font-semibold mb-1 text-black">
-                    {feature.title}
-                  </h4>
-                  <p className="text-gray-600 text-xs">{feature.description}</p>
-                </motion.div>
-              ))}
+              {features.map((feature, idx) => {
+                const isEven = idx % 2 === 0;
+                const cardAnim = isEven ? fadeInLeft : fadeInRight;
+                return (
+                  <motion.div
+                    key={idx}
+                    variants={cardAnim}
+                    transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+                    className={`p-6  bg-white border border-gray-200 ${
+                      idx === features.length - 1 && features.length % 3 === 1
+                        ? "lg:col-start-2"
+                        : ""
+                    }`}
+                  >
+                    <div className="text-blue-900 mb-3">
+                      {React.isValidElement(feature.icon)
+                        ? React.cloneElement(
+                            feature.icon as React.ReactElement<any>,
+                            {
+                              className: "w-8 h-8",
+                            }
+                          )
+                        : feature.icon}
+                    </div>
+                    <h4 className="text-base font-semibold mb-2 text-black">
+                      {feature.title}
+                    </h4>
+                    <p className="text-gray-600 text-sm">{feature.description}</p>
+                  </motion.div>
+                );
+              })}
             </motion.div>
           </div>
         </motion.section>
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 1 }}
-          className="mt-8 flex items-center justify-center"
-        >
-          <div className="w-full flex flex-col md:flex-row min-h-screen">
+      </div>
+
+      {/* IMPROVED SECTIONS 01-04 */}
+      <div className="min-h-screen bg-white">
+        <div className="max-w-7xl mx-auto">
+          {/* Section 01 & Image - with Full Overlap */}
+          <div className="relative" ref={section01Ref}>
+            <div className="grid mt-2 grid-cols-1 lg:grid-cols-2 gap-0 mb-0">
+              {/* Section 01 - Left with Text */}
+              <motion.div
+                className="bg-white p-8 lg:p-12 flex flex-col justify-start relative"
+                variants={fadeInLeft}
+                initial="hidden"
+                animate={isSection01InView ? "visible" : "hidden"}
+                transition={{ ...transitionProps, delay: 0.1 }}
+              >
+                <motion.div variants={staggerContainer}>
+                  <motion.h2
+                    className="text-5xl lg:text-6xl font-bold mb-3"
+                    variants={fadeInUp}
+                  >
+                    01.
+                  </motion.h2>
+                  <motion.h3
+                    className="text-base lg:text-lg font-semibold mb-4 uppercase tracking-wide"
+                    variants={fadeInUp}
+                  >
+                    Residential CCTV Installation
+                  </motion.h3>
+                  <motion.p
+                    className="text-gray-800 text-xs lg:text-sm leading-relaxed"
+                    variants={fadeInUp}
+                  >
+                    Protect your home with reliable residential CCTV systems.
+                  </motion.p>
+                  <motion.p
+                    className="text-gray-800 text-xs lg:text-sm leading-relaxed"
+                    variants={fadeInUp}
+                  >
+                    Our discreet and pleasing cameras blend perfectly.
+                  </motion.p>
+                </motion.div>
+              </motion.div>
+            </div>
+
+            {/* Image - Full Width Overlap */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
-              className="w-full md:w-1/2 h-64 md:h-screen relative overflow-hidden"
+              className="absolute top-0 right-0 w-full lg:w-2/3 h-80 lg:h-96 z-2"
+              variants={scaleIn}
+              initial="hidden"
+              animate={isSection01InView ? "visible" : "hidden"}
+              transition={{ ...transitionProps, delay: 0.2 }}
             >
               <img
-                src="https://images.unsplash.com/photo-1518176258769-f227c798150e?w=800&h=1200&fit=crop&q=80"
-                alt="Dramatic black and white landscape"
-                className="w-full h-full object-cover grayscale"
+                src="/cctv.jpg"
+                alt="Modern buildings"
+                className="w-full h-75 object-cover"
               />
+            </motion.div>
+          </div>
+
+          {/* Section 02 & 03 - with 02 Overlapping Both Images */}
+          <div className="relative grid grid-cols-1 lg:grid-cols-2 gap-0 mt-20 lg:mt-0">
+            <motion.div
+              className="bg-blue-500 text-white p-4 lg:p-6 relative z-10 lg:-mt-2 lg:-mb-16"
+              ref={section02Ref}
+              variants={fadeInUp}
+              initial="hidden"
+              animate={isSection02InView ? "visible" : "hidden"}
+              transition={{ ...transitionProps, delay: 0.1 }}
+            >
+              <motion.div variants={staggerContainer}>
+                <motion.h2
+                  className="text-5xl lg:text-6xl font-bold mb-3"
+                  variants={fadeInUp}
+                >
+                  02.
+                </motion.h2>
+                <motion.h3
+                  className="text-base lg:text-lg font-semibold mb-4 uppercase tracking-wide"
+                  variants={fadeInUp}
+                >
+                  Commercial CCTV Installation
+                </motion.h3>
+                <motion.p
+                  className="text-xs lg:text-sm leading-relaxed"
+                  variants={fadeInUp}
+                >
+                  Secure your business premises with our robust commercial CCTV
+                  solutions. From retail stores to office buildings, we provide
+                  comprehensive surveillance systems that deter theft and ensure
+                  employee safety.
+                </motion.p>
+              </motion.div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
-              className="w-full md:w-1/2 bg-blue-900 flex items-center justify-center p-8 md:p-16 md:h-screen"
+              className="bg-white text-black p-8 lg:p-12 flex flex-col items-end"
+              ref={section03Ref}
+              variants={fadeInUp}
+              initial="hidden"
+              animate={isSection03InView ? "visible" : "hidden"}
+              transition={{ ...transitionProps, delay: 0.1 }}
             >
-              <div className="max-w-md text-center space-y-6">
+              <motion.div variants={staggerContainer}>
+                <motion.h2
+                  className="text-5xl lg:text-6xl font-bold mb-3 text-right"
+                  variants={fadeInUp}
+                >
+                  03.
+                </motion.h2>
+                <motion.h3
+                  className="text-base lg:text-lg font-semibold mb-4 uppercase tracking-wide text-right"
+                  variants={fadeInUp}
+                >
+                  Remote Monitoring
+                </motion.h3>
                 <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 1,
-                    delay: 0.3,
-                    ease: [0.25, 0.1, 0.25, 1],
-                  }}
-                  className="text-blue-200 text-sm tracking-wider uppercase font-medium"
+                  className="text-xs lg:text-sm leading-relaxed text-right"
+                  variants={fadeInUp}
                 >
-                  Protect What Matters Most
+                  Stay connected to your property from anywhere in the world
+                  with our remote monitoring services. Access live feeds and
+                  recorded footage through your smartphone, tablet, or computer
+                  with ease.
                 </motion.p>
-
-                <motion.h1
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 1,
-                    delay: 0.4,
-                    ease: [0.25, 0.1, 0.25, 1],
-                  }}
-                  className="text-white text-4xl md:text-5xl font-bold leading-tight"
-                >
-                  Contact Us Today
-                </motion.h1>
-
-                <motion.p
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 1,
-                    delay: 0.5,
-                    ease: [0.25, 0.1, 0.25, 1],
-                  }}
-                  className="text-blue-100 text-lg leading-relaxed"
-                >
-                  Ready to enhance your security with Brightelv's advanced CCTV
-                  installation services? Contact our expert team today to
-                  discuss your security needs and get a customized solution
-                  tailored to your requirements.
-                </motion.p>
-
-                <motion.button
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  className="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 transform shadow-lg"
-                >
-                  Connect With Us
-                </motion.button>
-              </div>
+              </motion.div>
             </motion.div>
           </div>
-        </motion.div>
+        </div>
+
+        {/* FIXED Section 04 */}
+        <div className="max-w-7xl mx-auto">
+          <div
+            className="grid grid-cols-1 mt-6 lg:grid-cols-[35%_65%] gap-0"
+            ref={section04Ref}
+          >
+            {/* Text - Narrower Left Side */}
+            <motion.div
+              className="bg-white text-black w-full h-[75%] p-6 lg:p-10 flex flex-col justify-center"
+              style={{ color: "black" }}
+              variants={fadeInRight}
+              initial="hidden"
+              animate={isSection04InView ? "visible" : "hidden"}
+              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+            >
+              <motion.div variants={staggerContainer}>
+                <motion.h2
+                  className="text-5xl lg:text-6xl font-bold mb-3"
+                  style={{ color: "black" }}
+                  variants={fadeInUp}
+                >
+                  04.
+                </motion.h2>
+                <motion.h3
+                  className="text-base lg:text-lg  font-semibold mb-6 uppercase tracking-wide"
+                  style={{ color: "black" }}
+                  variants={fadeInUp}
+                >
+                  Maintenance and Upgrades
+                </motion.h3>
+                <motion.p
+                  className="text-sm lg:text-base leading-relaxed"
+                  style={{ color: "black" }}
+                  variants={fadeInUp}
+                >
+                  Regular maintenance is crucial for optimal performance.
+                  Brightelv offers routine check-ups and upgrades to ensure your
+                  CCTV system remains up-to-date and functions at its best.
+                </motion.p>
+              </motion.div>
+            </motion.div>
+
+            {/* Image - Wider Right Side */}
+            <motion.div
+              className="h-80 lg:h-[430px] overflow-hidden"
+              variants={fadeInLeft}
+              initial="hidden"
+              animate={isSection04InView ? "visible" : "hidden"}
+              transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1] }}
+            >
+              <img
+                src="/cctv2.jpg"
+                alt="CCTV Maintenance"
+                className="w-full h-80.5 object-cover"
+              />
+            </motion.div>
+          </div>
+        </div>
       </div>
     </>
   );
