@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Navbar from "./component/Navbar";
 import Banner from "./component/Banner";
 import Link from "./component/Link";
 import Slider from "./component/Silider";
@@ -10,7 +9,6 @@ import Testimonial from "./component/Testimonal";
 export default function Home() {
   return (
     <>
-      <Navbar />
       <Banner />
       <Link />
       <Slider />

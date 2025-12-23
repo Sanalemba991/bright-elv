@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import NextLink from "next/link";
 import { Variants } from "framer-motion";
+
 export default function ELVSolutions() {
   // Refs for all sections
   const heroRef = useRef(null);
@@ -14,6 +15,60 @@ export default function ELVSolutions() {
 
   const solutionsRef = useRef(null);
   const solutionsInView = useInView(solutionsRef, { once: true, amount: 0.3 });
+
+  // Banner background image
+  const bannerBackground =
+    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=800&fit=crop";
+
+  // Banner animation variants
+  const bannerContainerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+        duration: 0.8,
+      },
+    },
+  };
+
+  const bannerTitleVariants: Variants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.2,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
+  const bannerFadeInUpVariants: Variants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
+  const bannerSlideInRightVariants: Variants = {
+    hidden: { x: 50, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        delay: 0.5,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
 
   // Animation variants for solutions section
   const containerVariants: Variants = {
@@ -92,6 +147,86 @@ export default function ELVSolutions() {
 
   return (
     <div className="bg-white">
+      {/* Fixed Background Banner - Customized.tsx Style */}
+      <div className="relative mb-16 w-full h-screen bg-black overflow-hidden">
+        {/* Background Image with Fixed Positioning */}
+        <motion.div
+          className="absolute inset-0 w-full h-full"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-fixed"
+            style={{
+              backgroundImage: `url('${bannerBackground}')`,
+              filter: "brightness(0.4)",
+            }}
+          />
+          {/* Dark overlay for better text visibility */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+        </motion.div>
+
+        {/* Content Container */}
+        <motion.div
+          className="relative z-10 h-full flex flex-col"
+          variants={bannerContainerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Main Title - Centered */}
+          <div className="flex-1 flex items-center justify-center">
+            <motion.h1
+              className="text-white text-8xl md:text-9xl font-light tracking-tight"
+              variants={bannerTitleVariants}
+            >
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.8 }}
+              >
+                ELV
+              </motion.span>
+              <motion.span
+                className="ml-8 inline-block"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 1.2 }}
+              >
+                Solutions
+              </motion.span>
+            </motion.h1>
+          </div>
+
+          {/* Bottom Section - Right Aligned */}
+          <div className="pb-12 px-12 flex items-end justify-between">
+            <motion.div className="flex gap-2" variants={bannerFadeInUpVariants}></motion.div>
+
+            <motion.div className="flex flex-col items-end gap-2" variants={bannerSlideInRightVariants}>
+              <motion.p
+                className="text-white/70 text-sm max-w-md text-right"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 1.5 }}
+              >
+                Comprehensive Extra Low Voltage systems for modern infrastructure,
+                security, and communication needs across residential, commercial,
+                and industrial applications.
+              </motion.p>
+
+              <motion.div
+                className="h-0.5 w-32 bg-white/30"
+                initial={{ width: 0 }}
+                animate={{ width: "8rem" }}
+                transition={{ duration: 1, delay: 1.8 }}
+              />
+
+              <div className="h-14" />
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+
       {/* Main Content */}
       <main className="w-full py-16 px-4 md:px-8 lg:px-8 max-w-7xl mx-auto">
         {/* Hero Section */}
@@ -363,6 +498,7 @@ export default function ELVSolutions() {
                 />
               </div>
             </motion.div>
+
             <motion.div
               variants={itemVariants}
               className="relative group flex flex-col items-start justify-start bg-white p-6 rounded-sm"
@@ -389,6 +525,7 @@ export default function ELVSolutions() {
               {/* Circular Element - Positioned in top-right */}
               <div className="absolute top-4 right-4 w-10 h-10 bg-black rounded-full"></div>
             </motion.div>
+
             <motion.div
               variants={itemVariants}
               className="relative group overflow-hidden"
@@ -402,6 +539,7 @@ export default function ELVSolutions() {
                 />
               </div>
             </motion.div>
+
             <motion.div
               variants={itemVariants}
               className="flex flex-col justify-start bg-gray-50 p-6 rounded-sm"
