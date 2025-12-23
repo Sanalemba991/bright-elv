@@ -20,11 +20,11 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'About Us', href: '/about-us' },
+    { name: 'About Us', href: '/about' },
     { name: 'Products', href: '#', hasDropdown: true },
     { name: 'Customized Solution', href: '/customised-solution', hasDropdown: true },
     { name: 'ELV Solution', href: '/elv-solution', hasDropdown: true },
-    { name: 'Contact Us', href: '/contact-us' },
+    { name: 'Contact Us', href: '/contact' },
   ];
 
   return (

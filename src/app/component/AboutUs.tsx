@@ -4,6 +4,59 @@ import { useRef } from "react";
 import { Variants } from "framer-motion";
 
 export default function AboutUs() {
+  // --- Banner-specific vars ---
+  const background =
+    "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200&h=800&fit=crop";
+
+  const bannerContainerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+        duration: 0.8,
+      },
+    },
+  };
+
+  const bannerTitleVariants: Variants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.2,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
+  const bannerFadeInUpVariants: Variants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
+  const bannerSlideInRightVariants: Variants = {
+    hidden: { x: 50, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        delay: 0.5,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
   // Refs for all sections
   const introRef = useRef(null);
   const introInView = useInView(introRef, { once: true, amount: 0.3 });
@@ -69,7 +122,86 @@ export default function AboutUs() {
   };
 
   return (
-    <div className=" bg-white">
+    <>
+      {/* Inlined Banner with bg-fixed (no scroll movement) */}
+      <div className="relative mb-16 w-full h-screen bg-black overflow-hidden">
+        {/* Background Image with Fixed Positioning (like "Why" component) */}
+        <motion.div
+          className="absolute inset-0 w-full h-full"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-fixed"
+            style={{
+              backgroundImage: `url('${background}')`,
+              filter: "brightness(0.4)",
+            }}
+          />
+          {/* Dark overlay for better text visibility */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+        </motion.div>
+
+        {/* Content Container */}
+        <motion.div
+          className="relative z-10 h-full flex flex-col"
+          variants={bannerContainerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Main Title */}
+          <div className="flex-1 flex items-center justify-center">
+            <motion.h1
+              className="text-white text-8xl md:text-9xl font-light tracking-tight"
+              variants={bannerTitleVariants}
+            >
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.8 }}
+              >
+                About
+              </motion.span>
+              <motion.span
+                className="ml-8 inline-block "
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 1.2 }}
+              >
+               Us
+              </motion.span>
+            </motion.h1>
+          </div>
+
+          {/* Bottom Section */}
+          <div className="pb-12 px-12 flex items-end justify-between">
+            <motion.div className="flex gap-2" variants={bannerFadeInUpVariants}></motion.div>
+
+            <motion.div className="flex flex-col items-end gap-2" variants={bannerSlideInRightVariants}>
+              <motion.p
+                className="text-white/70 text-sm max-w-md text-right"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 1.5 }}
+              >
+                Cyphernix is a leading technology startup based in Bangalore, delivering innovative and scalable digital solutions for modern businesses. With a strong focus on innovation and performance, Cyphernix helps startups and enterprises transform ideas into powerful technology-driven success.
+              </motion.p>
+
+              <motion.div
+                className="h-0.5 w-32 bg-white/30"
+                initial={{ width: 0 }}
+                animate={{ width: "8rem" }}
+                transition={{ duration: 1, delay: 1.8 }}
+              />
+
+              <div className="h-14" />
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+
+      <div className=" bg-white">
       {/* Main Content */}
       <main className="w-full py-16 px-4 md:px-8 lg:px-8 max-w-7xl mx-auto">
         {/* Intro Section */}
@@ -113,7 +245,7 @@ export default function AboutUs() {
             <img
               src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=800&fit=crop"
               alt="Team meeting"
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-full object-cover "
             />
           </motion.div>
 
@@ -126,7 +258,7 @@ export default function AboutUs() {
             <img
               src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=400&fit=crop"
               alt="Team member at work"
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-full object-cover"
             />
           </motion.div>
 
@@ -139,7 +271,7 @@ export default function AboutUs() {
             <img
               src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=400&fit=crop"
               alt="Team gathering"
-              className="w-full h-full object-cover rounded-lg"
+              className="w-full h-full object-cover "
             />
           </motion.div>
         </div>
@@ -167,7 +299,7 @@ export default function AboutUs() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Expert Instructors Card */}
             <motion.div 
-              className="bg-gray-100 rounded-xl p-6"
+              className="bg-gray-100  p-6"
               variants={cardVariants}
               initial="hidden"
               animate={whyChooseUsInView ? "visible" : "hidden"}
@@ -202,7 +334,7 @@ export default function AboutUs() {
 
             {/* Specialized Expertise Card */}
             <motion.div 
-              className="bg-gray-100 rounded-xl p-6"
+              className="bg-gray-100  p-6"
               variants={cardVariants}
               initial="hidden"
               animate={whyChooseUsInView ? "visible" : "hidden"}
@@ -236,7 +368,7 @@ export default function AboutUs() {
 
             {/* Customized Solutions Card */}
             <motion.div 
-              className="bg-blue-900 text-white rounded-xl p-6"
+              className="bg-blue-900 text-white  p-6"
               variants={cardVariants}
               initial="hidden"
               animate={whyChooseUsInView ? "visible" : "hidden"}
@@ -270,7 +402,7 @@ export default function AboutUs() {
           {/* Additional Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
             <motion.div 
-              className="bg-gray-100 rounded-xl p-6"
+              className="bg-gray-100  p-6"
               variants={cardVariants}
               initial="hidden"
               animate={whyChooseUsInView ? "visible" : "hidden"}
@@ -303,7 +435,7 @@ export default function AboutUs() {
             </motion.div>
 
             <motion.div 
-              className="bg-gray-100 rounded-xl p-6"
+              className="bg-gray-100  p-6"
               variants={cardVariants}
               initial="hidden"
               animate={whyChooseUsInView ? "visible" : "hidden"}
@@ -358,7 +490,7 @@ export default function AboutUs() {
               <img
                 src="https://brightelv.com/wp-content/uploads/2023/11/elv-600x400.jpg"
                 alt="Quality assurance"
-                className="w-full h-full rounded-lg object-cover"
+                className="w-full h-full  object-cover"
               />
             </motion.div>
 
@@ -542,5 +674,6 @@ export default function AboutUs() {
         </section>
       </main>
     </div>
+    </>
   );
 }

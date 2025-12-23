@@ -1,8 +1,62 @@
 "use client";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Variants } from "framer-motion";
 
 export default function Contact() {
+  // --- Banner-specific vars ---
+  const background =
+    "https://images.unsplash.com/photo-1600210492493-0946911123ea?w=1200&h=800&fit=crop";
+
+  const bannerContainerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+        duration: 0.8,
+      },
+    },
+  };
+
+  const bannerTitleVariants: Variants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.2,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
+  const bannerFadeInUpVariants: Variants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
+  const bannerSlideInRightVariants: Variants = {
+    hidden: { x: 50, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        delay: 0.5,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -37,7 +91,86 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <>
+      {/* Inlined Banner with bg-fixed (no scroll movement) */}
+      <div className="relative mb-16 w-full h-screen bg-black overflow-hidden">
+        {/* Background Image with Fixed Positioning */}
+        <motion.div
+          className="absolute inset-0 w-full h-full"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-fixed"
+            style={{
+              backgroundImage: `url('${background}')`,
+              filter: "brightness(0.4)",
+            }}
+          />
+          {/* Dark overlay for better text visibility */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+        </motion.div>
+
+        {/* Content Container */}
+        <motion.div
+          className="relative z-10 h-full flex flex-col"
+          variants={bannerContainerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Main Title */}
+          <div className="flex-1 flex items-center justify-center">
+            <motion.h1
+              className="text-white text-8xl md:text-9xl font-light tracking-tight"
+              variants={bannerTitleVariants}
+            >
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.8 }}
+              >
+                Get in
+              </motion.span>
+              <motion.span
+                className="ml-8 inline-block"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 1.2 }}
+              >
+                Touch
+              </motion.span>
+            </motion.h1>
+          </div>
+
+          {/* Bottom Section */}
+          <div className="pb-12 px-12 flex items-end justify-between">
+            <motion.div className="flex gap-2" variants={bannerFadeInUpVariants}></motion.div>
+
+            <motion.div className="flex flex-col items-end gap-2" variants={bannerSlideInRightVariants}>
+              <motion.p
+                className="text-white/70 text-sm max-w-md text-right"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 1.5 }}
+              >
+                Have questions or need more information? We're here to help. Reach out to us and our team will get back to you as soon as possible.
+              </motion.p>
+
+              <motion.div
+                className="h-0.5 w-32 bg-white/30"
+                initial={{ width: 0 }}
+                animate={{ width: "8rem" }}
+                transition={{ duration: 1, delay: 1.8 }}
+              />
+
+              <div className="h-14" />
+            </motion.div>
+          </div>
+        </motion.div>
+      </div>
+
+      <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Left Column - Contact Info */}
@@ -275,5 +408,6 @@ export default function Contact() {
         </motion.div>
       </div>
     </div>
+    </>
   );
 }
