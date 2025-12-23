@@ -72,7 +72,7 @@ export default function Link() {
                 delay: 0.4, // Staggered animation
               }}
               viewport={{ once: true }}
-              className="relative overflow-hidden rounded-lg shadow-lg"
+              className="relative overflow-hidden  shadow-lg"
             >
               <Image
                 src={images[0].src}
