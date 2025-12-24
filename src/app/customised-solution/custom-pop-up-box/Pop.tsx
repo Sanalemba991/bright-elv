@@ -564,18 +564,17 @@ const Pop = () => {
             initial="hidden"
             animate={scrollSectionIsInView ? "visible" : "hidden"}
           >
-            {/* Top Left - Title and Text */}
-            <motion.div
-              className="flex flex-col justify-center p-6 bg-white"
-              variants={scrollItemVariants}
+            {/* Top Left - Images Only */}
+             <motion.div
+              className="relative overflow-hidden"
+              variants={scrollImageVariants}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-black mb-4">
-                Gallery
-              </h2>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Sample text. Click to select the text box. Click again or double
-                click to start editing the text.
-              </p>
+              <Image
+                src="https://images.unsplash.com/photo-1765211003001-b9eb5cbfe1f3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMXx8fGVufDB8fHx8fA%3D%3D"
+                alt="Modern white architecture"
+                fill
+                className="object-cover"
+              />
             </motion.div>
 
             {/* Top Middle - White Architecture Image */}
