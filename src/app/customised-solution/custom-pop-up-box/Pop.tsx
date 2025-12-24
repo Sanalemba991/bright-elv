@@ -357,7 +357,10 @@ const Pop = () => {
 
   // ScrollSection refs and variants
   const scrollSectionRef = useRef(null);
-  const scrollSectionIsInView = useInView(scrollSectionRef, { once: true, amount: 0.2 });
+  const scrollSectionIsInView = useInView(scrollSectionRef, {
+    once: true,
+    amount: 0.2,
+  });
 
   const scrollContainerVariants: Variants = {
     hidden: { opacity: 0 },

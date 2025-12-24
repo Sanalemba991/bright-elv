@@ -147,7 +147,6 @@ export default function Slider() {
       link: "/elv-solution/pabx",
       large: true,
     },
-    
   ];
 
   return (

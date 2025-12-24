@@ -200,18 +200,24 @@ export default function ELVSolutions() {
 
           {/* Bottom Section - Right Aligned */}
           <div className="pb-12 px-12 flex items-end justify-between">
-            <motion.div className="flex gap-2" variants={bannerFadeInUpVariants}></motion.div>
+            <motion.div
+              className="flex gap-2"
+              variants={bannerFadeInUpVariants}
+            ></motion.div>
 
-            <motion.div className="flex flex-col items-end gap-2" variants={bannerSlideInRightVariants}>
+            <motion.div
+              className="flex flex-col items-end gap-2"
+              variants={bannerSlideInRightVariants}
+            >
               <motion.p
                 className="text-white/70 text-sm max-w-md text-right"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 1.5 }}
               >
-                Comprehensive Extra Low Voltage systems for modern infrastructure,
-                security, and communication needs across residential, commercial,
-                and industrial applications.
+                Comprehensive Extra Low Voltage systems for modern
+                infrastructure, security, and communication needs across
+                residential, commercial, and industrial applications.
               </motion.p>
 
               <motion.div
@@ -247,10 +253,10 @@ export default function ELVSolutions() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="max-w-2xl mx-auto text-gray-600 leading-relaxed mb-3 text-sm"
           >
-            Extra Low Voltage (ELV) systems form the backbone of modern buildings,
-            providing essential services like security, communication, and data
-            transmission. Our comprehensive ELV solutions ensure seamless integration
-            and optimal performance.
+            Extra Low Voltage (ELV) systems form the backbone of modern
+            buildings, providing essential services like security,
+            communication, and data transmission. Our comprehensive ELV
+            solutions ensure seamless integration and optimal performance.
           </motion.p>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -375,8 +381,8 @@ export default function ELVSolutions() {
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed mb-4">
                 Professional CCTV system installation for residential and
-                commercial properties with high-definition cameras and
-                advanced monitoring.
+                commercial properties with high-definition cameras and advanced
+                monitoring.
               </p>
               <NextLink
                 href="/elv-solution/cctv-installation"
@@ -401,8 +407,8 @@ export default function ELVSolutions() {
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed mb-4">
                 Regular maintenance and support services to keep your CCTV
-                systems running at peak performance with timely inspections
-                and repairs.
+                systems running at peak performance with timely inspections and
+                repairs.
               </p>
               <NextLink
                 href="/elv-solution/cctv-maintenance"

@@ -94,9 +94,8 @@ export default function Banner() {
             quality={100}
             sizes="100vw"
           />
-          
+
           {/* Gradient overlays for better text visibility */}
-         
         </motion.div>
 
         {/* Content Container */}
@@ -108,10 +107,7 @@ export default function Banner() {
         >
           <div className="px-6 sm:px-10 md:px-16 lg:px-24 max-w-4xl">
             {/* Subtitle Badge */}
-            <motion.div
-              variants={subtitleVariants}
-              className="mb-4"
-            >
+            <motion.div variants={subtitleVariants} className="mb-4">
               <span className="inline-block px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white/70 text-xs uppercase tracking-wide font-medium">
                 {banner.subtitle}
               </span>
@@ -131,7 +127,7 @@ export default function Banner() {
               className="text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl leading-relaxed mb-10"
             >
               {banner.description}
-            </motion.p>          
+            </motion.p>
           </div>
         </motion.div>
       </div>

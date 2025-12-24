@@ -4,7 +4,7 @@ import Pabx from "./Pabx";
 export default function Page() {
   return (
     <>
-<Pabx/>
+      <Pabx />
     </>
   );
 }

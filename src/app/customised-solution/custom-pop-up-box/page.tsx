@@ -1,10 +1,9 @@
-import Pop from "./Pop"
-import ScrollSection from "./ScrollSection"
+import Pop from "./Pop";
 
 export default function Page() {
   return (
     <>
-      <Pop/>
+      <Pop />
     </>
   );
 }

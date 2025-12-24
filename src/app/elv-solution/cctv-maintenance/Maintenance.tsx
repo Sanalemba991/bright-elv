@@ -41,7 +41,7 @@ export default function Maintenance() {
     once: true,
     margin: "-100px",
   });
- const features = [
+  const features = [
     {
       icon: <Users className="w-6 h-6" />,
       title: "Expert Technicians",
@@ -178,7 +178,6 @@ export default function Maintenance() {
                 className="text-2xl sm:text-3xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold leading-tight max-w-2xl"
               >
                 CCTV Camera Maintenance & Support In Dubai
-
               </motion.h1>
 
               <motion.p
@@ -191,7 +190,10 @@ export default function Maintenance() {
                 }}
                 className="mt-4 md:mt-3 lg:mt-3 xl:mt-4 text-gray-400 text-sm sm:text-base md:text-sm lg:text-base xl:text-lg max-w-lg leading-relaxed"
               >
-                At Brightelv, we ensure your CCTV systems stay reliable and fully functional. As a trusted CCTV supplier in Dubai, we offer professional maintenance, quick repairs, and system upgrades at competitive costs—keeping your property secure at all times.
+                At Brightelv, we ensure your CCTV systems stay reliable and
+                fully functional. As a trusted CCTV supplier in Dubai, we offer
+                professional maintenance, quick repairs, and system upgrades at
+                competitive costs—keeping your property secure at all times.
               </motion.p>
 
               <motion.button
@@ -278,8 +280,8 @@ export default function Maintenance() {
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
             className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 mb-2"
           >
-            Why Choose Bright<span className="text-blue-900">elv</span> for CCTV Maintenance
-
+            Why Choose Bright<span className="text-blue-900">elv</span> for CCTV
+            Maintenance
           </motion.h2>
           <motion.div
             initial={{ width: 0, opacity: 0 }}
@@ -353,8 +355,10 @@ export default function Maintenance() {
                   }}
                   className="text-sm md:text-base text-gray-700 mb-3 md:mb-4 leading-relaxed"
                 >
-                   One of the key components of an exceptional audio experience lies in the sound system. Our ELV products are offer a variety of immersive sound solutions that envelop you in a rich audio tapestry, making you feel like you're part of the action.
-
+                  One of the key components of an exceptional audio experience
+                  lies in the sound system. Our ELV products are offer a variety
+                  of immersive sound solutions that envelop you in a rich audio
+                  tapestry, making you feel like you're part of the action.
                 </motion.p>
               </motion.div>
             </div>
@@ -388,8 +392,8 @@ export default function Maintenance() {
                   }}
                   className="text-lg md:text-xl lg:text-xl font-semibold text-gray-900 mt-2 mb-3 md:mb-4"
                 >
-                 Cost of CCTV Maintenance in Dubai
-</motion.h3>
+                  Cost of CCTV Maintenance in Dubai
+                </motion.h3>
                 <motion.p
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -401,8 +405,12 @@ export default function Maintenance() {
                   }}
                   className="text-sm md:text-base text-gray-700 mb-4 md:mb-6 leading-relaxed"
                 >
-                    The CCTV maintenance cost in Dubai can vary based on the complexity and size of your system. At Brightelv, we offer customized maintenance packages to suit your specific needs and budget. Our pricing is transparent, with no hidden fees, ensuring you get the best value for your investment.
-</motion.p>
+                  The CCTV maintenance cost in Dubai can vary based on the
+                  complexity and size of your system. At Brightelv, we offer
+                  customized maintenance packages to suit your specific needs
+                  and budget. Our pricing is transparent, with no hidden fees,
+                  ensuring you get the best value for your investment.
+                </motion.p>
               </motion.div>
 
               <motion.div
@@ -447,9 +455,8 @@ export default function Maintenance() {
               }}
               className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 mb-2"
             >
-               Why choose Bright<span className="text-blue-900">elv</span> for
+              Why choose Bright<span className="text-blue-900">elv</span> for
               CCTV maintenance
-
             </motion.h2>
             <motion.div
               initial={{ width: 0, opacity: 0 }}
@@ -497,7 +504,9 @@ export default function Maintenance() {
                     <h4 className="text-base font-semibold mb-2 text-black">
                       {feature.title}
                     </h4>
-                    <p className="text-gray-600 text-sm">{feature.description}</p>
+                    <p className="text-gray-600 text-sm">
+                      {feature.description}
+                    </p>
                   </motion.div>
                 );
               })}
@@ -537,7 +546,7 @@ export default function Maintenance() {
                     className="text-gray-800 text-xs lg:text-sm leading-relaxed"
                     variants={fadeInUp}
                   >
-                   Routine inspections to ensure all components
+                    Routine inspections to ensure all components
                   </motion.p>
                   <motion.p
                     className="text-gray-800 text-xs lg:text-sm leading-relaxed"
@@ -586,13 +595,15 @@ export default function Maintenance() {
                   className="text-base lg:text-lg font-semibold mb-4 uppercase tracking-wide"
                   variants={fadeInUp}
                 >
-                 Software & Hardware Updates
+                  Software & Hardware Updates
                 </motion.h3>
                 <motion.p
                   className="text-xs lg:text-sm leading-relaxed"
                   variants={fadeInUp}
                 >
-                  Keeping your system up-to-date with the latest security features and improvements. Addressing any physical damages or malfunctions in cameras, cables, and other hardware.
+                  Keeping your system up-to-date with the latest security
+                  features and improvements. Addressing any physical damages or
+                  malfunctions in cameras, cables, and other hardware.
                 </motion.p>
               </motion.div>
             </motion.div>
@@ -622,7 +633,8 @@ export default function Maintenance() {
                   className="text-xs lg:text-sm leading-relaxed text-right"
                   variants={fadeInUp}
                 >
-                 Regular cleaning of camera lenses and other sensitive equipment to ensure clear, unobstructed footage.
+                  Regular cleaning of camera lenses and other sensitive
+                  equipment to ensure clear, unobstructed footage.
                 </motion.p>
               </motion.div>
             </motion.div>
@@ -657,14 +669,15 @@ export default function Maintenance() {
                   style={{ color: "black" }}
                   variants={fadeInUp}
                 >
-                 Performance Optimization
+                  Performance Optimization
                 </motion.h3>
                 <motion.p
                   className="text-sm lg:text-base leading-relaxed"
                   style={{ color: "black" }}
                   variants={fadeInUp}
                 >
-                  Adjusting camera angles, settings, and configurations for optimal coverage and efficiency.
+                  Adjusting camera angles, settings, and configurations for
+                  optimal coverage and efficiency.
                 </motion.p>
               </motion.div>
             </motion.div>

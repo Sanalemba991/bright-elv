@@ -95,7 +95,7 @@ export default function Audio() {
 
   return (
     <>
-    <Navbar />
+      <Navbar />
       {/* HERO SECTION */}
       <div className="bg-black font-sans">
         <section className="relative h-auto md:h-[550px] lg:h-[650px] xl:h-[780px] overflow-visible">
@@ -114,7 +114,11 @@ export default function Audio() {
               <motion.h1
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                transition={{
+                  duration: 1,
+                  delay: 0.3,
+                  ease: [0.25, 0.1, 0.25, 1],
+                }}
                 className="text-2xl sm:text-3xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold leading-tight max-w-2xl"
               >
                 Enhancing Collaboration with Advanced AV Solutions in Dubai
@@ -123,7 +127,11 @@ export default function Audio() {
               <motion.p
                 initial={{ opacity: 0, y: 40 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                transition={{
+                  duration: 1,
+                  delay: 0.5,
+                  ease: [0.25, 0.1, 0.25, 1],
+                }}
                 className="mt-4 md:mt-3 lg:mt-3 xl:mt-4 text-gray-400 text-sm sm:text-base md:text-sm lg:text-base xl:text-lg max-w-lg leading-relaxed"
               >
                 Welcome to Brightelv, your trusted provider of comprehensive
@@ -138,7 +146,11 @@ export default function Audio() {
               <motion.button
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.7, ease: [0.25, 0.1, 0.25, 1] }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.7,
+                  ease: [0.25, 0.1, 0.25, 1],
+                }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="mt-6 md:mt-4 lg:mt-4 xl:mt-6 inline-block bg-yellow-400 text-black font-semibold text-sm md:text-xs lg:text-sm xl:text-base px-6 md:px-3 lg:px-4 xl:px-4 py-2.5 md:py-1.5 lg:py-2 xl:py-2 rounded-full shadow-lg hover:bg-yellow-300 transition-colors"
@@ -150,14 +162,22 @@ export default function Audio() {
             <motion.div
               initial={{ opacity: 0, x: 100, rotateY: 10 }}
               animate={{ opacity: 1, x: 0, rotateY: 0 }}
-              transition={{ duration: 1.2, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+              transition={{
+                duration: 1.2,
+                delay: 0.4,
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
               className="hidden mr-9 md:block absolute right-0 top-[65%] -translate-y-1/2 md:w-[30%] lg:w-[32%] xl:w-[36%] md:h-[90%] lg:h-[92%] xl:h-[96%]"
             >
               <div className="relative w-full h-full">
                 <motion.div
                   initial={{ scale: 1.2 }}
                   animate={{ scale: 1 }}
-                  transition={{ duration: 1.2, delay: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+                  transition={{
+                    duration: 1.2,
+                    delay: 0.6,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
                   className="relative w-full h-full"
                 >
                   <Image
@@ -214,7 +234,11 @@ export default function Audio() {
             initial={{ width: 0, opacity: 0 }}
             whileInView={{ width: 48, opacity: 1 }}
             viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1], delay: 0.4 }}
+            transition={{
+              duration: 1.2,
+              ease: [0.25, 0.1, 0.25, 1],
+              delay: 0.4,
+            }}
             className="h-1 bg-blue-900 mx-auto"
           ></motion.div>
         </motion.header>
@@ -257,7 +281,11 @@ export default function Audio() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.4 }}
+                  transition={{
+                    duration: 1,
+                    ease: [0.25, 0.1, 0.25, 1],
+                    delay: 0.4,
+                  }}
                   className="text-lg md:text-xl lg:text-xl font-semibold text-gray-900 mt-2 mb-3 md:mb-4"
                 >
                   Design and Integration
@@ -267,7 +295,11 @@ export default function Audio() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
+                  transition={{
+                    duration: 1,
+                    ease: [0.25, 0.1, 0.25, 1],
+                    delay: 0.5,
+                  }}
                   className="text-sm md:text-base text-gray-700 mb-3 md:mb-4 leading-relaxed"
                 >
                   Our expert team collaborates with you to design and integrate
@@ -282,7 +314,11 @@ export default function Audio() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.6 }}
+                  transition={{
+                    duration: 1,
+                    ease: [0.25, 0.1, 0.25, 1],
+                    delay: 0.6,
+                  }}
                   className="text-sm md:text-base text-gray-700 mb-3 md:mb-4 leading-relaxed"
                 >
                   From system design and professional installation to
@@ -317,7 +353,11 @@ export default function Audio() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.3 }}
+                  transition={{
+                    duration: 1,
+                    ease: [0.25, 0.1, 0.25, 1],
+                    delay: 0.3,
+                  }}
                   className="text-lg md:text-xl lg:text-xl font-semibold text-gray-900 mt-2 mb-3 md:mb-4"
                 >
                   Our AV Solutions & Services
@@ -326,7 +366,11 @@ export default function Audio() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.4 }}
+                  transition={{
+                    duration: 1,
+                    ease: [0.25, 0.1, 0.25, 1],
+                    delay: 0.4,
+                  }}
                   className="text-sm md:text-base text-gray-700 mb-4 md:mb-6 leading-relaxed"
                 >
                   Our solutions are built to scale, integrate with existing
@@ -348,7 +392,11 @@ export default function Audio() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.5 }}
+                    transition={{
+                      duration: 0.8,
+                      ease: [0.25, 0.1, 0.25, 1],
+                      delay: 0.5,
+                    }}
                     className="p-2 bg-gray-50 rounded-md hover:bg-gray-100 transition-all duration-300 group cursor-default"
                   >
                     <h4 className="font-semibold text-gray-900 mb-1 group-hover:text-blue-900 transition-colors text-sm md:text-sm">
@@ -363,7 +411,11 @@ export default function Audio() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.6 }}
+                    transition={{
+                      duration: 0.8,
+                      ease: [0.25, 0.1, 0.25, 1],
+                      delay: 0.6,
+                    }}
                     className="p-2 bg-gray-50 rounded-md hover:bg-gray-100 transition-all duration-300 group cursor-default"
                   >
                     <h4 className="font-semibold text-gray-900 mb-1 group-hover:text-blue-900 transition-colors text-sm md:text-sm">
@@ -378,7 +430,11 @@ export default function Audio() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.7 }}
+                    transition={{
+                      duration: 0.8,
+                      ease: [0.25, 0.1, 0.25, 1],
+                      delay: 0.7,
+                    }}
                     className="p-2 bg-gray-50 rounded-md hover:bg-gray-100 transition-all duration-300 group cursor-default"
                   >
                     <h4 className="font-semibold text-gray-900 mb-1 group-hover:text-blue-900 transition-colors text-sm md:text-sm">
@@ -393,7 +449,11 @@ export default function Audio() {
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: [0.25, 0.1, 0.25, 1], delay: 0.8 }}
+                    transition={{
+                      duration: 0.8,
+                      ease: [0.25, 0.1, 0.25, 1],
+                      delay: 0.8,
+                    }}
                     className="p-2 bg-gray-50 rounded-md hover:bg-gray-100 transition-all duration-300 group cursor-default"
                   >
                     <h4 className="font-semibold text-gray-900 mb-1 group-hover:text-blue-900 transition-colors text-sm md:text-sm">
@@ -448,7 +508,11 @@ export default function Audio() {
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
+                transition={{
+                  duration: 1,
+                  ease: [0.25, 0.1, 0.25, 1],
+                  delay: 0.2,
+                }}
                 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 mb-2"
               >
                 Audio<span className="text-blue-900"> solutions</span>
@@ -457,11 +521,15 @@ export default function Audio() {
                 initial={{ width: 0, opacity: 0 }}
                 whileInView={{ width: 48, opacity: 1 }}
                 viewport={{ once: true, amount: 0.3 }}
-                transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1], delay: 0.4 }}
+                transition={{
+                  duration: 1.2,
+                  ease: [0.25, 0.1, 0.25, 1],
+                  delay: 0.4,
+                }}
                 className="h-1 bg-blue-900 mx-auto"
               ></motion.div>
             </motion.header>
-            
+
             {/* Top row: 3 cards */}
             <motion.div
               variants={staggerContainer}
@@ -471,7 +539,10 @@ export default function Audio() {
               className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8"
             >
               {/* Card 1 */}
-              <motion.div variants={cardVariant} className="bg-white shadow-md overflow-hidden flex flex-col">
+              <motion.div
+                variants={cardVariant}
+                className="bg-white shadow-md overflow-hidden flex flex-col"
+              >
                 <img
                   src="/images/portfolio/bag.jpg"
                   alt="The Ultimate Theme"
@@ -491,9 +562,12 @@ export default function Audio() {
                   </p>
                 </div>
               </motion.div>
-              
+
               {/* Card 2 */}
-              <motion.div variants={cardVariant} className="bg-white shadow-md overflow-hidden flex flex-col">
+              <motion.div
+                variants={cardVariant}
+                className="bg-white shadow-md overflow-hidden flex flex-col"
+              >
                 <img
                   src="/images/portfolio/folder.jpg"
                   alt="New Collaboration"
@@ -513,9 +587,12 @@ export default function Audio() {
                   </p>
                 </div>
               </motion.div>
-              
+
               {/* Card 3 */}
-              <motion.div variants={cardVariant} className="bg-white shadow-md overflow-hidden flex flex-col">
+              <motion.div
+                variants={cardVariant}
+                className="bg-white shadow-md overflow-hidden flex flex-col"
+              >
                 <img
                   src="/images/portfolio/identity.jpg"
                   alt="Brand Identity"
@@ -536,13 +613,17 @@ export default function Audio() {
                 </div>
               </motion.div>
             </motion.div>
-            
+
             {/* Bottom row: 1 card centered */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+              transition={{
+                duration: 1,
+                delay: 0.5,
+                ease: [0.25, 0.1, 0.25, 1],
+              }}
               className="flex justify-center"
             >
               <div className="bg-white shadow-md overflow-hidden flex flex-col w-full md:w-1/3">
@@ -559,7 +640,8 @@ export default function Audio() {
                     Featured Projects
                   </span>
                   <p className="text-gray-600 text-sm flex-1">
-                    Pioneering the latest in speaker technology for immersive audio experiences.
+                    Pioneering the latest in speaker technology for immersive
+                    audio experiences.
                   </p>
                 </div>
               </div>
@@ -602,7 +684,11 @@ export default function Audio() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                  transition={{
+                    duration: 1,
+                    delay: 0.3,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
                   className="text-blue-200 text-sm tracking-wider uppercase font-medium"
                 >
                   Integrate with Expert AV Solutions
@@ -612,7 +698,11 @@ export default function Audio() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+                  transition={{
+                    duration: 1,
+                    delay: 0.4,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
                   className="text-white text-4xl md:text-5xl font-bold leading-tight"
                 >
                   Let's Work Together
@@ -622,7 +712,11 @@ export default function Audio() {
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
+                  transition={{
+                    duration: 1,
+                    delay: 0.5,
+                    ease: [0.25, 0.1, 0.25, 1],
+                  }}
                   className="text-blue-100 text-lg leading-relaxed"
                 >
                   Are you interested in implementing advanced audio-visual
@@ -635,8 +729,6 @@ export default function Audio() {
                   initial={{ opacity: 0, scale: 0.8 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                 
-                 
                   className="bg-white text-blue-900 px-8 py-3 rounded-full font-semibold hover:bg-blue-50 transition-all duration-300 transform shadow-lg"
                 >
                   Connect With Us

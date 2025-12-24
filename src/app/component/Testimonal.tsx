@@ -1,38 +1,41 @@
 "use client";
 import Image from "next/image";
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, useInView } from 'framer-motion';
+import React, { useState, useEffect, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 
 export default function Testimonial() {
   const testimonials = [
     {
-      quote: "The numbers speak for themselves. We're seeing a 50% resolution rate with Fin, which is pretty amazing!",
+      quote:
+        "The numbers speak for themselves. We're seeing a 50% resolution rate with Fin, which is pretty amazing!",
       name: "Ben Peak",
       position: "Director of Technical Support",
       company: "Robin",
-      image: "/samb.jpg"
+      image: "/samb.jpg",
     },
     {
-      quote: "Fin has transformed our workflow. Efficiency up by 40%! Highly recommend.",
+      quote:
+        "Fin has transformed our workflow. Efficiency up by 40%! Highly recommend.",
       name: "Alice Johnson",
       position: "CTO",
       company: "TechCorp",
-      image: "/alice.jpg"
+      image: "/alice.jpg",
     },
     {
       quote: "Outstanding support and reliability. Our team loves using Fin.",
       name: "John Doe",
       position: "Manager",
       company: "Innovate Ltd",
-      image: "/john.jpg"
+      image: "/john.jpg",
     },
     {
-      quote: "Fin is a game-changer for our operations. Increased productivity significantly.",
+      quote:
+        "Fin is a game-changer for our operations. Increased productivity significantly.",
       name: "Sarah Lee",
       position: "VP",
       company: "Global Solutions",
-      image: "/sarah.jpg"
-    }
+      image: "/sarah.jpg",
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -53,7 +56,6 @@ export default function Testimonial() {
     <motion.div
       ref={ref}
       className="py-12 bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center p-4"
-   
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 1 }}
     >
@@ -72,7 +74,7 @@ export default function Testimonial() {
                 "{currentTestimonial.quote}"
               </p>
             </div>
-            
+
             <div className="pt-2 space-y-1">
               <p className="text-sm font-semibold text-blue-900">
                 {currentTestimonial.name}
@@ -80,7 +82,6 @@ export default function Testimonial() {
               <p className="text-xs text-gray-600">
                 {currentTestimonial.position}
               </p>
-              
             </div>
           </div>
 

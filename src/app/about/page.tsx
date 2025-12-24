@@ -4,7 +4,7 @@ import AboutUs from "../component/AboutUs";
 export default function Home() {
   return (
     <>
-     <AboutUs />
+      <AboutUs />
     </>
   );
 }

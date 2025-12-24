@@ -4,7 +4,7 @@ import CCTV from "./CCTV";
 export default function CCTVInstallation() {
   return (
     <>
-    <CCTV/>
+      <CCTV />
     </>
   );
 }

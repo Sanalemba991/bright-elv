@@ -16,9 +16,8 @@ export default function ConditionalLayout({
 
   return (
     <>
-   
-      <Navbar  />
-    
+      <Navbar />
+
       {children}
     </>
   );

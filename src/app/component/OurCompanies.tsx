@@ -143,7 +143,10 @@ export default function Link() {
                 viewport={{ once: true }}
                 className="text-sm sm:text-base leading-relaxed"
               >
-                the Global Supplier for cutting-edge ELV products. Empowering businesses with innovative technology, seamless integration, and superior performance. Trust our experienced 42+ team Employees to deliver high-quality solutions tailored to your unique needs.
+                the Global Supplier for cutting-edge ELV products. Empowering
+                businesses with innovative technology, seamless integration, and
+                superior performance. Trust our experienced 42+ team Employees
+                to deliver high-quality solutions tailored to your unique needs.
               </motion.p>
 
               <motion.p
@@ -153,7 +156,11 @@ export default function Link() {
                 viewport={{ once: true }}
                 className="text-sm sm:text-base leading-relaxed"
               >
-                Together, let’s surpass your competition and achieve customer satisfaction with more than 128 projects completed. Choose BrightElv Technology LLC for excellence in Surveillance, Audio-Visual, Home Automation, and Building Management solutions with our 1000+ product lines.
+                Together, let’s surpass your competition and achieve customer
+                satisfaction with more than 128 projects completed. Choose
+                BrightElv Technology LLC for excellence in Surveillance,
+                Audio-Visual, Home Automation, and Building Management solutions
+                with our 1000+ product lines.
               </motion.p>
             </div>
 
@@ -164,7 +171,9 @@ export default function Link() {
               viewport={{ once: true }}
               className="mt-4"
             >
-              <h3 className="text-sm sm:text-base leading-relaxed text-gray-600">We operate around global</h3>
+              <h3 className="text-sm sm:text-base leading-relaxed text-gray-600">
+                We operate around global
+              </h3>
             </motion.div>
 
             {/* COUNTER SECTION - Fixed display */}

@@ -354,7 +354,12 @@ export default function Structure() {
                   }}
                   className="text-sm md:text-base text-gray-700 mb-3 md:mb-4 leading-relaxed"
                 >
-                  Brightelv Dubai provides professional structured cabling solutions designed to support reliable and high-performance network connectivity. Our expert team ensures proper design, installation, and maintenance of cabling systems, helping businesses achieve seamless communication, scalability, and long-term network efficiency.
+                  Brightelv Dubai provides professional structured cabling
+                  solutions designed to support reliable and high-performance
+                  network connectivity. Our expert team ensures proper design,
+                  installation, and maintenance of cabling systems, helping
+                  businesses achieve seamless communication, scalability, and
+                  long-term network efficiency.
                 </motion.p>
               </motion.div>
             </div>
@@ -476,7 +481,7 @@ export default function Structure() {
                   <motion.p
                     className="text-gray-700 text-xs lg:text-sm leading-relaxed mt-2"
                     variants={fadeInUp}
-                  >                  
+                  >
                     networking.
                   </motion.p>
                 </motion.div>

@@ -161,7 +161,9 @@ const industries = [
 
 export default function Client() {
   const [activeFilter, setActiveFilter] = useState("all");
-  const [selectedLogo, setSelectedLogo] = useState<typeof logos[0] | null>(null);
+  const [selectedLogo, setSelectedLogo] = useState<(typeof logos)[0] | null>(
+    null
+  );
   const headerRef = useRef(null);
   const isHeaderInView = useInView(headerRef, { once: true, amount: 0.5 });
 

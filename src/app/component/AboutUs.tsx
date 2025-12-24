@@ -60,65 +60,71 @@ export default function AboutUs() {
   // Refs for all sections
   const introRef = useRef(null);
   const introInView = useInView(introRef, { once: true, amount: 0.3 });
-  
+
   const galleryRef = useRef(null);
   const galleryInView = useInView(galleryRef, { once: true, amount: 0.3 });
-  
+
   const whyChooseUsRef = useRef(null);
-  const whyChooseUsInView = useInView(whyChooseUsRef, { once: true, amount: 0.2 });
-  
+  const whyChooseUsInView = useInView(whyChooseUsRef, {
+    once: true,
+    amount: 0.2,
+  });
+
   const commitmentsRef = useRef(null);
-  const commitmentsInView = useInView(commitmentsRef, { once: true, amount: 0.2 });
+  const commitmentsInView = useInView(commitmentsRef, {
+    once: true,
+    amount: 0.2,
+  });
 
   // Animation variants for commitment items - coming from above
   const commitmentItemVariants: Variants = {
     hidden: { opacity: 0, y: -40 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
+      transition: {
         duration: 1.2,
-        ease: "easeOut" 
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   // Animation for the vertical line - growing from top
   const lineVariants: Variants = {
     hidden: { scaleY: 0, transformOrigin: "top" },
-    visible: { 
+    visible: {
       scaleY: 1,
-      transition: { 
+      transition: {
         duration: 1.5,
-        ease: "easeInOut"
-      }
-    }
+        ease: "easeInOut",
+      },
+    },
   };
 
   // Animation for card items
   const cardVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
+      transition: {
         duration: 0.8,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   // Animation for gallery images
   const imageVariants: Variants = {
     hidden: { opacity: 0, scale: 0.9 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       scale: 1,
-      transition: { 
+      transition: {
         duration: 0.7,
-        ease: "easeOut"
-      }
-    }
+        ease: "easeOut",
+      },
+    },
   };
 
   return (
@@ -169,23 +175,33 @@ export default function AboutUs() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 1, delay: 1.2 }}
               >
-               Us
+                Us
               </motion.span>
             </motion.h1>
           </div>
 
           {/* Bottom Section */}
           <div className="pb-12 px-12 flex items-end justify-between">
-            <motion.div className="flex gap-2" variants={bannerFadeInUpVariants}></motion.div>
+            <motion.div
+              className="flex gap-2"
+              variants={bannerFadeInUpVariants}
+            ></motion.div>
 
-            <motion.div className="flex flex-col items-end gap-2" variants={bannerSlideInRightVariants}>
+            <motion.div
+              className="flex flex-col items-end gap-2"
+              variants={bannerSlideInRightVariants}
+            >
               <motion.p
                 className="text-white/70 text-sm max-w-md text-right"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 1, delay: 1.5 }}
               >
-                Cyphernix is a leading technology startup based in Bangalore, delivering innovative and scalable digital solutions for modern businesses. With a strong focus on innovation and performance, Cyphernix helps startups and enterprises transform ideas into powerful technology-driven success.
+                Cyphernix is a leading technology startup based in Bangalore,
+                delivering innovative and scalable digital solutions for modern
+                businesses. With a strong focus on innovation and performance,
+                Cyphernix helps startups and enterprises transform ideas into
+                powerful technology-driven success.
               </motion.p>
 
               <motion.div
@@ -202,478 +218,481 @@ export default function AboutUs() {
       </div>
 
       <div className=" bg-white">
-      {/* Main Content */}
-      <main className="w-full py-16 px-4 md:px-8 lg:px-8 max-w-7xl mx-auto">
-        {/* Intro Section */}
-        <div ref={introRef}>
-          <motion.h1 
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-8"
-            initial={{ opacity: 0, y: -20 }}
-            animate={introInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
-            WE ARE
-          </motion.h1>
-
-          <motion.div 
-            className="space-y-6 text-gray-600 text-base md:text-lg leading-relaxed max-w-3xl"
-            initial={{ opacity: 0 }}
-            animate={introInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <p>
-              A leading authority in CCTV brackets and poles in the Middle East,
-              particularly in Dubai, known for top-notch, durable, and innovative
-              surveillance equipment. Specializing in customized solutions, we
-              offer IP-rated poles designed for the harsh desert climate of the
-              UAE, ensuring long-term reliability. With a commitment to
-              excellence, we provide not just products but peace of mind, setting
-              the standard in surveillance technology.
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Image Gallery */}
-        <div ref={galleryRef} className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4">
-          <motion.div 
-            className="row-span-2"
-            variants={imageVariants}
-            initial="hidden"
-            animate={galleryInView ? "visible" : "hidden"}
-            transition={{ delay: 0.1 }}
-          >
-            <img
-              src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=800&fit=crop"
-              alt="Team meeting"
-              className="w-full h-full object-cover "
-            />
-          </motion.div>
-
-          <motion.div
-            variants={imageVariants}
-            initial="hidden"
-            animate={galleryInView ? "visible" : "hidden"}
-            transition={{ delay: 0.2 }}
-          >
-            <img
-              src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=400&fit=crop"
-              alt="Team member at work"
-              className="w-full h-full object-cover"
-            />
-          </motion.div>
-
-          <motion.div
-            variants={imageVariants}
-            initial="hidden"
-            animate={galleryInView ? "visible" : "hidden"}
-            transition={{ delay: 0.3 }}
-          >
-            <img
-              src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=400&fit=crop"
-              alt="Team gathering"
-              className="w-full h-full object-cover "
-            />
-          </motion.div>
-        </div>
-
-        {/* Why Choose Us Section */}
-        <section ref={whyChooseUsRef} className="mt-20">
-          <motion.p 
-            className="text-xs uppercase tracking-wider text-gray-500 mb-3"
-            initial={{ opacity: 0 }}
-            animate={whyChooseUsInView ? { opacity: 1 } : {}}
-            transition={{ duration: 0.5 }}
-          >
-            Bright <span className="text-blue-900">ELV</span>
-          </motion.p>
-          
-          <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-gray-900 mb-8"
-            initial={{ opacity: 0, y: -20 }}
-            animate={whyChooseUsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
-            Why <span className="text-blue-900">Choose</span> Us
-          </motion.h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Expert Instructors Card */}
-            <motion.div 
-              className="bg-gray-100  p-6"
-              variants={cardVariants}
-              initial="hidden"
-              animate={whyChooseUsInView ? "visible" : "hidden"}
-              transition={{ delay: 0.1 }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+        {/* Main Content */}
+        <main className="w-full py-16 px-4 md:px-8 lg:px-8 max-w-7xl mx-auto">
+          {/* Intro Section */}
+          <div ref={introRef}>
+            <motion.h1
+              className="text-4xl md:text-5xl font-bold text-gray-900 mb-8"
+              initial={{ opacity: 0, y: -20 }}
+              animate={introInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6 }}
             >
-              <div className="w-10 h-10 border-2 text-blue-600 border-gray-900 rounded-full flex items-center justify-center mb-4">
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Expert Instructors
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Choose BrightElv for unparalleled expertise in CCTV brackets and
-                poles in the UAE. Our products withstand harsh desert
-                conditions, ensuring durability and performance with exceptional
-                after-sales support.
-              </p>
-            </motion.div>
+              WE ARE
+            </motion.h1>
 
-            {/* Specialized Expertise Card */}
-            <motion.div 
-              className="bg-gray-100  p-6"
-              variants={cardVariants}
-              initial="hidden"
-              animate={whyChooseUsInView ? "visible" : "hidden"}
-              transition={{ delay: 0.2 }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
-            >
-              <div className="w-10 h-10 border-2 text-blue-600 border-gray-900 rounded-full flex items-center justify-center mb-4">
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Specialized Expertise
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Leading company in Dubai and Middle East specializing
-                exclusively in CCTV brackets and poles. Our skilled technicians
-                deliver state-of-the-art surveillance equipment.
-              </p>
-            </motion.div>
-
-            {/* Customized Solutions Card */}
-            <motion.div 
-              className="bg-blue-900 text-white  p-6"
-              variants={cardVariants}
-              initial="hidden"
-              animate={whyChooseUsInView ? "visible" : "hidden"}
-              transition={{ delay: 0.3 }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
-            >
-              <div className="w-10 h-10 border-2 border-white rounded-full flex items-center justify-center mb-4">
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold mb-3">Customized Solutions</h3>
-              <p className="text-gray-100 text-sm leading-relaxed">
-                Bespoke CCTV solutions customized to specific height, location,
-                and aesthetic requirements. We create security solutions
-                tailored to your exact needs.
-              </p>
-            </motion.div>
-          </div>
-
-          {/* Additional Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
-            <motion.div 
-              className="bg-gray-100  p-6"
-              variants={cardVariants}
-              initial="hidden"
-              animate={whyChooseUsInView ? "visible" : "hidden"}
-              transition={{ delay: 0.4 }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
-            >
-              <div className="w-10 h-10 border-2 text-blue-600 border-gray-900 rounded-full flex items-center justify-center mb-4">
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Trust and Integrity
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Built on trust and integrity, we provide superior surveillance
-                products meeting the highest quality standards. Your security is
-                our priority.
-              </p>
-            </motion.div>
-
-            <motion.div 
-              className="bg-gray-100  p-6"
-              variants={cardVariants}
-              initial="hidden"
-              animate={whyChooseUsInView ? "visible" : "hidden"}
-              transition={{ delay: 0.5 }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
-            >
-              <div className="w-10 h-10 border-2 text-blue-600 border-gray-900 rounded-full flex items-center justify-center mb-4">
-                <svg
-                  className="w-5 h-5"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Elevating Surveillance Standards
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Top ELV company providing specialized CCTV brackets and poles,
-                crafted for UAE's climate with commitment to excellence and
-                integrity.
-              </p>
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Our Commitments Section */}
-        <section ref={commitmentsRef} className="mt-20">
-          <motion.h2 
-            className="text-3xl md:text-4xl font-bold text-gray-900 mb-12"
-            initial={{ opacity: 0, y: -20 }}
-            animate={commitmentsInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.7 }}
-          >
-            Our Commitments
-          </motion.h2>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            {/* Left side - Image */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={commitmentsInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.1 }}
+              className="space-y-6 text-gray-600 text-base md:text-lg leading-relaxed max-w-3xl"
+              initial={{ opacity: 0 }}
+              animate={introInView ? { opacity: 1 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <p>
+                A leading authority in CCTV brackets and poles in the Middle
+                East, particularly in Dubai, known for top-notch, durable, and
+                innovative surveillance equipment. Specializing in customized
+                solutions, we offer IP-rated poles designed for the harsh desert
+                climate of the UAE, ensuring long-term reliability. With a
+                commitment to excellence, we provide not just products but peace
+                of mind, setting the standard in surveillance technology.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Image Gallery */}
+          <div
+            ref={galleryRef}
+            className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4"
+          >
+            <motion.div
+              className="row-span-2"
+              variants={imageVariants}
+              initial="hidden"
+              animate={galleryInView ? "visible" : "hidden"}
+              transition={{ delay: 0.1 }}
             >
               <img
-                src="https://brightelv.com/wp-content/uploads/2023/11/elv-600x400.jpg"
-                alt="Quality assurance"
-                className="w-full h-full  object-cover"
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=800&fit=crop"
+                alt="Team meeting"
+                className="w-full h-full object-cover "
               />
             </motion.div>
 
-            {/* Right side - 4 commitment points */}
-            <div className="flex flex-col justify-center h-full">
-              <div className="flex flex-col space-y-10 relative">
-                {/* Vertical line with animation */}
-                <motion.span 
-                  className="absolute left-6 top-0 h-full w-0.5 bg-gradient-to-b from-blue-900 via-blue-600 to-blue-200 z-0 hidden md:block"
-                  variants={lineVariants}
-                  initial="hidden"
-                  animate={commitmentsInView ? "visible" : "hidden"}
-                  transition={{ delay: 0.3 }}
-                ></motion.span>
-                
-                {/* Client Satisfaction */}
-                <motion.div 
-                  className="flex items-start space-x-4 relative z-10"
-                  variants={commitmentItemVariants}
-                  initial="hidden"
-                  animate={commitmentsInView ? "visible" : "hidden"}
-                  transition={{ delay: 0.4 }}
-                  whileHover={{ x: 5, transition: { duration: 0.3 } }}
-                >
-                  <motion.div 
-                    className="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center flex-shrink-0"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
+            <motion.div
+              variants={imageVariants}
+              initial="hidden"
+              animate={galleryInView ? "visible" : "hidden"}
+              transition={{ delay: 0.2 }}
+            >
+              <img
+                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&h=400&fit=crop"
+                alt="Team member at work"
+                className="w-full h-full object-cover"
+              />
+            </motion.div>
+
+            <motion.div
+              variants={imageVariants}
+              initial="hidden"
+              animate={galleryInView ? "visible" : "hidden"}
+              transition={{ delay: 0.3 }}
+            >
+              <img
+                src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=800&h=400&fit=crop"
+                alt="Team gathering"
+                className="w-full h-full object-cover "
+              />
+            </motion.div>
+          </div>
+
+          {/* Why Choose Us Section */}
+          <section ref={whyChooseUsRef} className="mt-20">
+            <motion.p
+              className="text-xs uppercase tracking-wider text-gray-500 mb-3"
+              initial={{ opacity: 0 }}
+              animate={whyChooseUsInView ? { opacity: 1 } : {}}
+              transition={{ duration: 0.5 }}
+            >
+              Bright <span className="text-blue-900">ELV</span>
+            </motion.p>
+
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-8"
+              initial={{ opacity: 0, y: -20 }}
+              animate={whyChooseUsInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6 }}
+            >
+              Why <span className="text-blue-900">Choose</span> Us
+            </motion.h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Expert Instructors Card */}
+              <motion.div
+                className="bg-gray-100  p-6"
+                variants={cardVariants}
+                initial="hidden"
+                animate={whyChooseUsInView ? "visible" : "hidden"}
+                transition={{ delay: 0.1 }}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              >
+                <div className="w-10 h-10 border-2 text-blue-600 border-gray-900 rounded-full flex items-center justify-center mb-4">
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-                      />
-                    </svg>
-                  </motion.div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-1">
-                      Client Satisfaction
-                    </h3>
-                    <p className="text-gray-600 text-sm italic leading-relaxed">
-                      We only supply world class equipment, serviced &amp; ready
-                      for work on delivery.
-                    </p>
-                  </div>
-                </motion.div>
-                
-                {/* Dependable Delivery */}
-                <motion.div 
-                  className="flex items-start space-x-4 relative z-10"
-                  variants={commitmentItemVariants}
-                  initial="hidden"
-                  animate={commitmentsInView ? "visible" : "hidden"}
-                  transition={{ delay: 0.6 }}
-                  whileHover={{ x: 5, transition: { duration: 0.3 } }}
-                >
-                  <motion.div 
-                    className="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center flex-shrink-0"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  Expert Instructors
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Choose BrightElv for unparalleled expertise in CCTV brackets
+                  and poles in the UAE. Our products withstand harsh desert
+                  conditions, ensuring durability and performance with
+                  exceptional after-sales support.
+                </p>
+              </motion.div>
+
+              {/* Specialized Expertise Card */}
+              <motion.div
+                className="bg-gray-100  p-6"
+                variants={cardVariants}
+                initial="hidden"
+                animate={whyChooseUsInView ? "visible" : "hidden"}
+                transition={{ delay: 0.2 }}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              >
+                <div className="w-10 h-10 border-2 text-blue-600 border-gray-900 rounded-full flex items-center justify-center mb-4">
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"
-                      />
-                    </svg>
-                  </motion.div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-1">
-                      Dependable Delivery
-                    </h3>
-                    <p className="text-gray-600 text-sm italic leading-relaxed">
-                      Construction equipment will arrive at your jobsite in
-                      prime condition within 30 minutes of the agreed delivery
-                      time.
-                    </p>
-                  </div>
-                </motion.div>
-                
-                {/* On Site Service */}
-                <motion.div 
-                  className="flex items-start space-x-4 relative z-10"
-                  variants={commitmentItemVariants}
-                  initial="hidden"
-                  animate={commitmentsInView ? "visible" : "hidden"}
-                  transition={{ delay: 0.8 }}
-                  whileHover={{ x: 5, transition: { duration: 0.3 } }}
-                >
-                  <motion.div 
-                    className="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center flex-shrink-0"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  Specialized Expertise
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Leading company in Dubai and Middle East specializing
+                  exclusively in CCTV brackets and poles. Our skilled
+                  technicians deliver state-of-the-art surveillance equipment.
+                </p>
+              </motion.div>
+
+              {/* Customized Solutions Card */}
+              <motion.div
+                className="bg-blue-900 text-white  p-6"
+                variants={cardVariants}
+                initial="hidden"
+                animate={whyChooseUsInView ? "visible" : "hidden"}
+                transition={{ delay: 0.3 }}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              >
+                <div className="w-10 h-10 border-2 border-white rounded-full flex items-center justify-center mb-4">
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                  </motion.div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-1">
-                      On Site Service
-                    </h3>
-                    <p className="text-gray-600 text-sm italic leading-relaxed">
-                      Our repair crew or replacement equipment will arrive at
-                      your site within six hours of call.
-                    </p>
-                  </div>
-                </motion.div>
-                
-                {/* Customer Service Hotline */}
-                <motion.div 
-                  className="flex items-start space-x-4 relative z-10"
-                  variants={commitmentItemVariants}
-                  initial="hidden"
-                  animate={commitmentsInView ? "visible" : "hidden"}
-                  transition={{ delay: 1.0 }}
-                  whileHover={{ x: 5, transition: { duration: 0.3 } }}
-                >
-                  <motion.div 
-                    className="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center flex-shrink-0"
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold mb-3">Customized Solutions</h3>
+                <p className="text-gray-100 text-sm leading-relaxed">
+                  Bespoke CCTV solutions customized to specific height,
+                  location, and aesthetic requirements. We create security
+                  solutions tailored to your exact needs.
+                </p>
+              </motion.div>
+            </div>
+
+            {/* Additional Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+              <motion.div
+                className="bg-gray-100  p-6"
+                variants={cardVariants}
+                initial="hidden"
+                animate={whyChooseUsInView ? "visible" : "hidden"}
+                transition={{ delay: 0.4 }}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              >
+                <div className="w-10 h-10 border-2 text-blue-600 border-gray-900 rounded-full flex items-center justify-center mb-4">
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
                   >
-                    <svg
-                      className="w-6 h-6 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  Trust and Integrity
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Built on trust and integrity, we provide superior surveillance
+                  products meeting the highest quality standards. Your security
+                  is our priority.
+                </p>
+              </motion.div>
+
+              <motion.div
+                className="bg-gray-100  p-6"
+                variants={cardVariants}
+                initial="hidden"
+                animate={whyChooseUsInView ? "visible" : "hidden"}
+                transition={{ delay: 0.5 }}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              >
+                <div className="w-10 h-10 border-2 text-blue-600 border-gray-900 rounded-full flex items-center justify-center mb-4">
+                  <svg
+                    className="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  Elevating Surveillance Standards
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Top ELV company providing specialized CCTV brackets and poles,
+                  crafted for UAE's climate with commitment to excellence and
+                  integrity.
+                </p>
+              </motion.div>
+            </div>
+          </section>
+
+          {/* Our Commitments Section */}
+          <section ref={commitmentsRef} className="mt-20">
+            <motion.h2
+              className="text-3xl md:text-4xl font-bold text-gray-900 mb-12"
+              initial={{ opacity: 0, y: -20 }}
+              animate={commitmentsInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.7 }}
+            >
+              Our Commitments
+            </motion.h2>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+              {/* Left side - Image */}
+              <motion.div
+                initial={{ opacity: 0, x: -30 }}
+                animate={commitmentsInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.8, delay: 0.1 }}
+              >
+                <img
+                  src="https://brightelv.com/wp-content/uploads/2023/11/elv-600x400.jpg"
+                  alt="Quality assurance"
+                  className="w-full h-full  object-cover"
+                />
+              </motion.div>
+
+              {/* Right side - 4 commitment points */}
+              <div className="flex flex-col justify-center h-full">
+                <div className="flex flex-col space-y-10 relative">
+                  {/* Vertical line with animation */}
+                  <motion.span
+                    className="absolute left-6 top-0 h-full w-0.5 bg-gradient-to-b from-blue-900 via-blue-600 to-blue-200 z-0 hidden md:block"
+                    variants={lineVariants}
+                    initial="hidden"
+                    animate={commitmentsInView ? "visible" : "hidden"}
+                    transition={{ delay: 0.3 }}
+                  ></motion.span>
+
+                  {/* Client Satisfaction */}
+                  <motion.div
+                    className="flex items-start space-x-4 relative z-10"
+                    variants={commitmentItemVariants}
+                    initial="hidden"
+                    animate={commitmentsInView ? "visible" : "hidden"}
+                    transition={{ delay: 0.4 }}
+                    whileHover={{ x: 5, transition: { duration: 0.3 } }}
+                  >
+                    <motion.div
+                      className="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center flex-shrink-0"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.3 }}
                     >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
-                      />
-                    </svg>
+                      <svg
+                        className="w-6 h-6 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                        />
+                      </svg>
+                    </motion.div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900 mb-1">
+                        Client Satisfaction
+                      </h3>
+                      <p className="text-gray-600 text-sm italic leading-relaxed">
+                        We only supply world class equipment, serviced &amp;
+                        ready for work on delivery.
+                      </p>
+                    </div>
                   </motion.div>
-                  <div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-1">
-                      Customer Service Hotline
-                    </h3>
-                    <p className="text-gray-600 text-sm italic leading-relaxed">
-                      We have knowledgeable staff on call 24/7, to solve all
-                      your equipment queries &amp; concerns within the day.
-                    </p>
-                  </div>
-                </motion.div>
+
+                  {/* Dependable Delivery */}
+                  <motion.div
+                    className="flex items-start space-x-4 relative z-10"
+                    variants={commitmentItemVariants}
+                    initial="hidden"
+                    animate={commitmentsInView ? "visible" : "hidden"}
+                    transition={{ delay: 0.6 }}
+                    whileHover={{ x: 5, transition: { duration: 0.3 } }}
+                  >
+                    <motion.div
+                      className="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center flex-shrink-0"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <svg
+                        className="w-6 h-6 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"
+                        />
+                      </svg>
+                    </motion.div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900 mb-1">
+                        Dependable Delivery
+                      </h3>
+                      <p className="text-gray-600 text-sm italic leading-relaxed">
+                        Construction equipment will arrive at your jobsite in
+                        prime condition within 30 minutes of the agreed delivery
+                        time.
+                      </p>
+                    </div>
+                  </motion.div>
+
+                  {/* On Site Service */}
+                  <motion.div
+                    className="flex items-start space-x-4 relative z-10"
+                    variants={commitmentItemVariants}
+                    initial="hidden"
+                    animate={commitmentsInView ? "visible" : "hidden"}
+                    transition={{ delay: 0.8 }}
+                    whileHover={{ x: 5, transition: { duration: 0.3 } }}
+                  >
+                    <motion.div
+                      className="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center flex-shrink-0"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <svg
+                        className="w-6 h-6 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
+                        />
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+                        />
+                      </svg>
+                    </motion.div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900 mb-1">
+                        On Site Service
+                      </h3>
+                      <p className="text-gray-600 text-sm italic leading-relaxed">
+                        Our repair crew or replacement equipment will arrive at
+                        your site within six hours of call.
+                      </p>
+                    </div>
+                  </motion.div>
+
+                  {/* Customer Service Hotline */}
+                  <motion.div
+                    className="flex items-start space-x-4 relative z-10"
+                    variants={commitmentItemVariants}
+                    initial="hidden"
+                    animate={commitmentsInView ? "visible" : "hidden"}
+                    transition={{ delay: 1.0 }}
+                    whileHover={{ x: 5, transition: { duration: 0.3 } }}
+                  >
+                    <motion.div
+                      className="w-12 h-12 bg-blue-900 rounded-full flex items-center justify-center flex-shrink-0"
+                      whileHover={{ scale: 1.1 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <svg
+                        className="w-6 h-6 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
+                        />
+                      </svg>
+                    </motion.div>
+                    <div>
+                      <h3 className="text-lg font-bold text-gray-900 mb-1">
+                        Customer Service Hotline
+                      </h3>
+                      <p className="text-gray-600 text-sm italic leading-relaxed">
+                        We have knowledgeable staff on call 24/7, to solve all
+                        your equipment queries &amp; concerns within the day.
+                      </p>
+                    </div>
+                  </motion.div>
+                </div>
               </div>
             </div>
-          </div>
-        </section>
-      </main>
-    </div>
+          </section>
+        </main>
+      </div>
     </>
   );
 }

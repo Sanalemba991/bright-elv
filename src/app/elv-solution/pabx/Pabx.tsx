@@ -155,7 +155,11 @@ export default function Pabx() {
                 }}
                 className="mt-4 md:mt-3 lg:mt-3 xl:mt-4 text-gray-400 text-sm sm:text-base md:text-sm lg:text-base xl:text-lg max-w-lg leading-relaxed"
               >
-                Brightelv Dubai offers state-of-the-art PABX (Private Automated Branch Exchange) solutions to streamline your communication needs. Our PABX systems are designed to provide seamless and efficient internal and external communication for businesses of all sizes.
+                Brightelv Dubai offers state-of-the-art PABX (Private Automated
+                Branch Exchange) solutions to streamline your communication
+                needs. Our PABX systems are designed to provide seamless and
+                efficient internal and external communication for businesses of
+                all sizes.
               </motion.p>
 
               <motion.button
@@ -242,7 +246,8 @@ export default function Pabx() {
             transition={{ duration: 1, ease: [0.25, 0.1, 0.25, 1], delay: 0.2 }}
             className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 mb-2"
           >
-            Advanced PABX Solutions in Dubai by Bright<span className="text-blue-900">elv</span>
+            Advanced PABX Solutions in Dubai by Bright
+            <span className="text-blue-900">elv</span>
           </motion.h2>
           <motion.div
             initial={{ width: 0, opacity: 0 }}
@@ -316,7 +321,11 @@ export default function Pabx() {
                   }}
                   className="text-sm md:text-base text-gray-700 mb-3 md:mb-4 leading-relaxed"
                 >
-                  Experience powerful communication amplification with Brightelv Dubai's advanced PABX solutions, featuring automated call routing, voicemail, conferencing, and modern tool integration, ensuring efficient, reliable communication for businesses of all sizes.
+                  Experience powerful communication amplification with Brightelv
+                  Dubai's advanced PABX solutions, featuring automated call
+                  routing, voicemail, conferencing, and modern tool integration,
+                  ensuring efficient, reliable communication for businesses of
+                  all sizes.
                 </motion.p>
               </motion.div>
             </div>
@@ -363,7 +372,11 @@ export default function Pabx() {
                   }}
                   className="text-sm md:text-base text-gray-700 mb-4 md:mb-6 leading-relaxed"
                 >
-                  Brightelv Dubai offers cutting-edge PABX solutions to streamline business communication. Our systems feature automated call routing, voicemail, call conferencing, and modern tool integration, ensuring efficient and reliable communication for businesses of all sizes.
+                  Brightelv Dubai offers cutting-edge PABX solutions to
+                  streamline business communication. Our systems feature
+                  automated call routing, voicemail, call conferencing, and
+                  modern tool integration, ensuring efficient and reliable
+                  communication for businesses of all sizes.
                 </motion.p>
               </motion.div>
 
@@ -409,7 +422,8 @@ export default function Pabx() {
               }}
               className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 mb-2"
             >
-              Why Choose Bright<span className="text-blue-900">elv</span> for PABX Solutions
+              Why Choose Bright<span className="text-blue-900">elv</span> for
+              PABX Solutions
             </motion.h2>
             <motion.div
               initial={{ width: 0, opacity: 0 }}
@@ -457,7 +471,9 @@ export default function Pabx() {
                     <h4 className="text-base font-semibold mb-2 text-black">
                       {feature.title}
                     </h4>
-                    <p className="text-gray-600 text-sm">{feature.description}</p>
+                    <p className="text-gray-600 text-sm">
+                      {feature.description}
+                    </p>
                   </motion.div>
                 );
               })}
@@ -497,13 +513,15 @@ export default function Pabx() {
                     className="text-gray-800 text-xs lg:text-sm leading-relaxed"
                     variants={fadeInUp}
                   >
-                    Experience crystal-clear communication with our High-Resolution Audio PABX systems.
+                    Experience crystal-clear communication with our
+                    High-Resolution Audio PABX systems.
                   </motion.p>
                   <motion.p
                     className="text-gray-800 text-xs lg:text-sm leading-relaxed"
                     variants={fadeInUp}
                   >
-                    Designed for clarity and reliability, ensuring seamless voice quality and enhanced collaboration.
+                    Designed for clarity and reliability, ensuring seamless
+                    voice quality and enhanced collaboration.
                   </motion.p>
                 </motion.div>
               </motion.div>
@@ -552,7 +570,10 @@ export default function Pabx() {
                   className="text-xs lg:text-sm leading-relaxed"
                   variants={fadeInUp}
                 >
-                  Experience seamless communication with Brightelv Dubai's voice control PABX solutions. Enhance efficiency with hands-free call management, automated routing, and advanced integration, empowering your business communication.
+                  Experience seamless communication with Brightelv Dubai's voice
+                  control PABX solutions. Enhance efficiency with hands-free
+                  call management, automated routing, and advanced integration,
+                  empowering your business communication.
                 </motion.p>
               </motion.div>
             </motion.div>
@@ -582,7 +603,10 @@ export default function Pabx() {
                   className="text-xs lg:text-sm leading-relaxed text-right"
                   variants={fadeInUp}
                 >
-                  Experience secure and stable connections with our advanced PABX solutions. Brightelv Dubai ensures reliable, efficient communication for your business, featuring robust security and seamless integration.
+                  Experience secure and stable connections with our advanced
+                  PABX solutions. Brightelv Dubai ensures reliable, efficient
+                  communication for your business, featuring robust security and
+                  seamless integration.
                 </motion.p>
               </motion.div>
             </motion.div>
@@ -624,7 +648,9 @@ export default function Pabx() {
                   style={{ color: "black" }}
                   variants={fadeInUp}
                 >
-                  Trust Brightelv Dubai to deliver robust, reliable, and scalable PABX systems that enhance your business communication infrastructure and support your growth.
+                  Trust Brightelv Dubai to deliver robust, reliable, and
+                  scalable PABX systems that enhance your business communication
+                  infrastructure and support your growth.
                 </motion.p>
               </motion.div>
             </motion.div>

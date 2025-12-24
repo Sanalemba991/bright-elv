@@ -4,7 +4,7 @@ import Structure from "./Structure";
 export default function Page() {
   return (
     <>
-    <Structure/>
+      <Structure />
     </>
   );
 }

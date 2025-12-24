@@ -516,7 +516,9 @@ export default function CCTV() {
                     <h4 className="text-base font-semibold mb-2 text-black">
                       {feature.title}
                     </h4>
-                    <p className="text-gray-600 text-sm">{feature.description}</p>
+                    <p className="text-gray-600 text-sm">
+                      {feature.description}
+                    </p>
                   </motion.div>
                 );
               })}

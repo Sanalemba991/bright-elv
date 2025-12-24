@@ -40,7 +40,7 @@ const Customized = () => {
     },
   };
 
-  const bannerFadeInUpVariants: Variants  = {
+  const bannerFadeInUpVariants: Variants = {
     hidden: { y: 30, opacity: 0 },
     visible: {
       y: 0,
@@ -52,7 +52,7 @@ const Customized = () => {
     },
   };
 
-  const bannerSlideInRightVariants: Variants  = {
+  const bannerSlideInRightVariants: Variants = {
     hidden: { x: 50, opacity: 0 },
     visible: {
       x: 0,
@@ -66,7 +66,7 @@ const Customized = () => {
   };
 
   // Animation variants (existing)
-  const fadeInUp: Variants  = {
+  const fadeInUp: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: {
       opacity: 1,
@@ -75,7 +75,7 @@ const Customized = () => {
     },
   };
 
-  const fadeInLeft: Variants  = {
+  const fadeInLeft: Variants = {
     hidden: { opacity: 0, x: -30 },
     visible: {
       opacity: 1,
@@ -84,7 +84,7 @@ const Customized = () => {
     },
   };
 
-  const fadeInRight: Variants  = {
+  const fadeInRight: Variants = {
     hidden: { opacity: 0, x: 30 },
     visible: {
       opacity: 1,
@@ -93,7 +93,7 @@ const Customized = () => {
     },
   };
 
-  const staggerContainer: Variants  = {
+  const staggerContainer: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -158,9 +158,15 @@ const Customized = () => {
 
           {/* Bottom Section */}
           <div className="pb-12 px-12 flex items-end justify-between">
-            <motion.div className="flex gap-2" variants={bannerFadeInUpVariants}></motion.div>
+            <motion.div
+              className="flex gap-2"
+              variants={bannerFadeInUpVariants}
+            ></motion.div>
 
-            <motion.div className="flex flex-col items-end gap-2" variants={bannerSlideInRightVariants}>
+            <motion.div
+              className="flex flex-col items-end gap-2"
+              variants={bannerSlideInRightVariants}
+            >
               <motion.p
                 className="text-white/70 text-sm max-w-md text-right"
                 initial={{ opacity: 0 }}
@@ -168,9 +174,9 @@ const Customized = () => {
                 transition={{ duration: 1, delay: 1.5 }}
               >
                 Discover the perfect blend of functionality, precision, and
-                sophistication with our exclusive range of customized CCTV console
-                solutions, expertly designed to meet the unique operational needs
-                of modern control rooms.
+                sophistication with our exclusive range of customized CCTV
+                console solutions, expertly designed to meet the unique
+                operational needs of modern control rooms.
               </motion.p>
 
               <motion.div
@@ -199,7 +205,10 @@ const Customized = () => {
             {/* Left Column */}
             <div className="flex flex-col">
               {/* Architecture Image */}
-              <motion.div className="relative h-[350px] md:h-[400px] w-full" variants={fadeInLeft}>
+              <motion.div
+                className="relative h-[350px] md:h-[400px] w-full"
+                variants={fadeInLeft}
+              >
                 <Image
                   src="/customised/customised.png"
                   alt="Modern kiosk and interactive display"
@@ -210,7 +219,10 @@ const Customized = () => {
               </motion.div>
 
               {/* Bottom Features - Two Columns */}
-              <motion.div className="grid ml grid-cols-2 gap-6 pt-8 pr-4" variants={staggerContainer}>
+              <motion.div
+                className="grid ml grid-cols-2 gap-6 pt-8 pr-4"
+                variants={staggerContainer}
+              >
                 {/* Custom Kiosk & Podium */}
                 <motion.div className="space-y-3" variants={fadeInUp}>
                   <h3 className="text-xl font-light">
@@ -265,7 +277,10 @@ const Customized = () => {
             {/* Right Column */}
             <div className="flex flex-col">
               {/* Text Content */}
-              <motion.div className="space-y-4 pl-8 py-4" variants={fadeInRight}>
+              <motion.div
+                className="space-y-4 pl-8 py-4"
+                variants={fadeInRight}
+              >
                 <h2 className="text-4xl md:text-5xl font-light text-gray-800">
                   Custom Pop Up <span className=" text-blue-900">Box</span>
                 </h2>
@@ -290,7 +305,10 @@ const Customized = () => {
               </motion.div>
 
               {/* Feather Image - electronics/cable management */}
-              <motion.div className="relative h-[350px] md:h-[420px] w-full  mt-4" variants={fadeInRight}>
+              <motion.div
+                className="relative h-[350px] md:h-[420px] w-full  mt-4"
+                variants={fadeInRight}
+              >
                 <Image
                   src="/customised/customised2.png"
                   alt="Professional cable management and electronics"
@@ -305,7 +323,10 @@ const Customized = () => {
       </section>
 
       {/* Reversed Section - same content but mirrored */}
-      <section ref={section2Ref} className="py-9 px-4 md:px-8 lg:px-16 bg-white">
+      <section
+        ref={section2Ref}
+        className="py-9 px-4 md:px-8 lg:px-16 bg-white"
+      >
         <div className="max-w-7xl mx-auto">
           {/* Main Grid - Two Columns (reversed) */}
           <motion.div
@@ -342,7 +363,10 @@ const Customized = () => {
               </motion.div>
 
               {/* Audio Equipment Image */}
-              <motion.div className="relative h-[350px] md:h-[420px] w-full  mt-4" variants={fadeInLeft}>
+              <motion.div
+                className="relative h-[350px] md:h-[420px] w-full  mt-4"
+                variants={fadeInLeft}
+              >
                 <Image
                   src="/customised/customised3.png"
                   alt="Professional audio mixer and equipment racks"
@@ -356,7 +380,10 @@ const Customized = () => {
             {/* Right Column (was Left in original) */}
             <div className="flex flex-col">
               {/* Security Console Image */}
-              <motion.div className="relative h-[350px] md:h-[400px] w-full" variants={fadeInRight}>
+              <motion.div
+                className="relative h-[350px] md:h-[400px] w-full"
+                variants={fadeInRight}
+              >
                 <Image
                   src="/customised/customised4.png"
                   alt="Security monitoring console"
@@ -367,7 +394,10 @@ const Customized = () => {
               </motion.div>
 
               {/* Bottom Features - Two Columns */}
-              <motion.div className="grid grid-cols-2 gap-6 pt-8 pl-4" variants={staggerContainer}>
+              <motion.div
+                className="grid grid-cols-2 gap-6 pt-8 pl-4"
+                variants={staggerContainer}
+              >
                 {/* Custom CCTV Consoles */}
                 <motion.div className="space-y-3" variants={fadeInUp}>
                   <h3 className="text-xl font-light">
@@ -421,7 +451,6 @@ const Customized = () => {
           </motion.div>
         </div>
       </section>
-      
     </>
   );
 };
