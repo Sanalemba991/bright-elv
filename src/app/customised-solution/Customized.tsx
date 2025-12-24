@@ -421,6 +421,7 @@ const Customized = () => {
           </motion.div>
         </div>
       </section>
+      
     </>
   );
 };
