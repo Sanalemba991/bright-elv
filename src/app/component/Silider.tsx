@@ -24,7 +24,7 @@ const ImageCard = ({ item }: { item: ImageItem }) => {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
     >
-      <a href={item.link} target="_blank" rel="noopener noreferrer">
+      <a href={item.link}>
         <div
           className="relative overflow-hidden bg-white transition-all duration-300 group h-[220px] md:h-[260px] lg:h-[300px]"
           onMouseEnter={() => setIsHovered(true)}

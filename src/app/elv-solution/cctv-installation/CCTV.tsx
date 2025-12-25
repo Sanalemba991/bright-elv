@@ -150,126 +150,138 @@ export default function CCTV() {
     ease: [0.25, 0.1, 0.25, 1],
   };
 
+  const bannerBackground =
+    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=800&fit=crop";
+
+  const bannerContainerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+        duration: 0.8,
+      },
+    },
+  };
+
+  const bannerTitleVariants: Variants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 1.2,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
+  const bannerSlideInRightVariants: Variants = {
+    hidden: { x: 50, opacity: 0 },
+    visible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        delay: 0.5,
+        ease: [0.25, 0.1, 0.25, 1],
+      },
+    },
+  };
+
   return (
     <>
       <Navbar />
       {/* HERO SECTION */}
-      <div className="bg-black font-sans">
-        <section className="relative h-auto md:h-[550px] lg:h-[650px] xl:h-[780px] overflow-visible">
-          <div className="absolute inset-0 flex">
-            <div className="w-full md:w-[45%] bg-black"></div>
-            <div className="hidden md:block w-[55%] bg-black-100"></div>
+      <div className="relative mb-16 w-full h-screen bg-black overflow-hidden">
+        {/* Background Image with Fixed Positioning */}
+        <motion.div
+          className="absolute inset-0 w-full h-full"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div
+            className="absolute inset-0 bg-cover bg-center bg-fixed"
+            style={{
+              backgroundImage: `url('${bannerBackground}')`,
+              filter: "brightness(0.4)",
+            }}
+          />
+          {/* Dark overlay for better text visibility */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80" />
+        </motion.div>
+
+        {/* Content Container */}
+        <motion.div
+          className="relative z-10 h-full flex flex-col"
+          variants={bannerContainerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* Main Title - Centered */}
+          <div className="flex-1 flex items-center justify-center">
+            <motion.h1
+              className="text-white text-8xl md:text-9xl font-light tracking-tight"
+              variants={bannerTitleVariants}
+            >
+              <motion.span
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 0.8 }}
+              >
+                CCTV
+              </motion.span>
+              <motion.span
+                className="ml-8 inline-block"
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1, delay: 1.2 }}
+              >
+                Installation
+              </motion.span>
+            </motion.h1>
           </div>
 
-          <div className="relative h-full max-w-7xl mx-auto flex items-center">
+          {/* Bottom Section - Right Aligned */}
+          <div className="pb-12 px-12 flex items-end justify-between">
             <motion.div
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1] }}
-              className="w-full md:w-[64%] text-white p-6 md:p-6 lg:p-6 xl:p-8 z-10 py-12 md:py-0"
-            >
-              <motion.h1
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 1,
-                  delay: 0.3,
-                  ease: [0.25, 0.1, 0.25, 1],
-                }}
-                className="text-2xl sm:text-3xl md:text-2xl lg:text-3xl xl:text-4xl font-extrabold leading-tight max-w-2xl"
-              >
-                Secure Your Premises with Brightelv Advanced CCTV Installation
-                Services in Dubai
-              </motion.h1>
+              className="flex gap-2"
+              variants={bannerTitleVariants}
+            ></motion.div>
 
+            <motion.div
+              className="flex flex-col items-end gap-2"
+              variants={bannerSlideInRightVariants}
+            >
               <motion.p
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{
-                  duration: 1,
-                  delay: 0.5,
-                  ease: [0.25, 0.1, 0.25, 1],
-                }}
-                className="mt-4 md:mt-3 lg:mt-3 xl:mt-4 text-gray-400 text-sm sm:text-base md:text-sm lg:text-base xl:text-lg max-w-lg leading-relaxed"
+                className="text-white/70 text-sm max-w-md text-right"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1, delay: 1.5 }}
               >
-                In today's world, security is paramount. BrightELV offers
-                top-notch CCTV installation services in Dubai, safeguarding your
-                properties around the clock with state-of-the-art surveillance
-                systems. Our reliable systems provide real-time monitoring and
-                recording, ensuring peace of mind against theft, vandalism, and
-                unauthorized access.
+                Advanced CCTV installation services safeguarding your properties
+                with state-of-the-art surveillance systems, real-time
+                monitoring, and comprehensive security solutions for residential
+                and commercial needs.
               </motion.p>
 
-              <motion.button
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 0.8,
-                  delay: 0.7,
-                  ease: [0.25, 0.1, 0.25, 1],
-                }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="mt-6 md:mt-4 lg:mt-4 xl:mt-6 inline-block bg-yellow-400 text-black font-semibold text-sm md:text-xs lg:text-sm xl:text-base px-6 md:px-3 lg:px-4 xl:px-4 py-2.5 md:py-1.5 lg:py-2 xl:py-2 rounded-full shadow-lg hover:bg-yellow-300 transition-colors"
-              >
-                Contact Us
-              </motion.button>
-            </motion.div>
+              <motion.div
+                className="h-0.5 w-32 bg-white/30"
+                initial={{ width: 0 }}
+                animate={{ width: "8rem" }}
+                transition={{ duration: 1, delay: 1.8 }}
+              />
 
-            <motion.div
-              initial={{ opacity: 0, x: 100, rotateY: 10 }}
-              animate={{ opacity: 1, x: 0, rotateY: 0 }}
-              transition={{
-                duration: 1.2,
-                delay: 0.4,
-                ease: [0.25, 0.1, 0.25, 1],
-              }}
-              className="hidden mr-9 md:block absolute right-0 top-[65%] -translate-y-1/2 md:w-[30%] lg:w-[32%] xl:w-[36%] md:h-[90%] lg:h-[92%] xl:h-[96%]"
-            >
-              <div className="relative w-full h-full">
-                <motion.div
-                  initial={{ scale: 1.2 }}
-                  animate={{ scale: 1 }}
-                  transition={{
-                    duration: 1.2,
-                    delay: 0.6,
-                    ease: [0.25, 0.1, 0.25, 1],
-                  }}
-                  className="relative w-full h-full"
-                >
-                  <Image
-                    src="/images/elv.jpg"
-                    alt="Audio-visual installation"
-                    fill
-                    className="object-cover object-bottom"
-                    priority
-                  />
-                </motion.div>
-              </div>
+              <div className="h-14" />
             </motion.div>
           </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.8, ease: [0.25, 0.1, 0.25, 1] }}
-            className="md:hidden w-full px-4 sm:px-6 lg:px-8 pb-8 bg-black"
-          >
-            <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden shadow-2xl">
-              <Image
-                src="/images/elv.jpg"
-                alt="Audio-visual installation"
-                fill
-                className="object-cover"
-                priority
-              />
-            </div>
-          </motion.div>
-        </section>
+        </motion.div>
       </div>
 
       {/* WHY CHOOSE US SECTION */}
-      <div className="mt-12 md:mt-32 lg:mt-56 font-sans">
+      <div className=" font-sans">
         <motion.header
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -446,89 +458,10 @@ export default function CCTV() {
             </div>
           </div>
         </motion.section>
-
-        {/* PORTFOLIO SECTION */}
-        <motion.section
-          initial="initial"
-          whileInView="whileInView"
-          variants={staggerContainer}
-          viewport={{ once: true, amount: 0.2 }}
-          className="bg-gray-50 text-black py-20 md:py-28"
-        >
-          <div className="max-w-5xl mx-auto px-6 text-center">
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{
-                duration: 1,
-                ease: [0.25, 0.1, 0.25, 1],
-                delay: 0.2,
-              }}
-              className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 mb-2"
-            >
-              Why choose Bright<span className="text-blue-900">elv</span> for
-              CCTV installation
-            </motion.h2>
-            <motion.div
-              initial={{ width: 0, opacity: 0 }}
-              whileInView={{ width: 48, opacity: 1 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{
-                duration: 1.2,
-                ease: [0.25, 0.1, 0.25, 1],
-                delay: 0.4,
-              }}
-              className="h-1 bg-blue-900 mx-auto"
-            ></motion.div>
-
-            <motion.div
-              initial="hidden"
-              whileInView="visible"
-              variants={staggerContainer}
-              viewport={{ once: true, amount: 0.2, margin: "-100px" }}
-              className="grid grid-cols-1 mt-12 sm:grid-cols-2 lg:grid-cols-3 gap-6"
-            >
-              {features.map((feature, idx) => {
-                const isEven = idx % 2 === 0;
-                const cardAnim = isEven ? fadeInLeft : fadeInRight;
-                return (
-                  <motion.div
-                    key={idx}
-                    variants={cardAnim}
-                    transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
-                    className={`p-6  bg-white border border-gray-200 ${
-                      idx === features.length - 1 && features.length % 3 === 1
-                        ? "lg:col-start-2"
-                        : ""
-                    }`}
-                  >
-                    <div className="text-blue-900 mb-3">
-                      {React.isValidElement(feature.icon)
-                        ? React.cloneElement(
-                            feature.icon as React.ReactElement<any>,
-                            {
-                              className: "w-8 h-8",
-                            }
-                          )
-                        : feature.icon}
-                    </div>
-                    <h4 className="text-base font-semibold mb-2 text-black">
-                      {feature.title}
-                    </h4>
-                    <p className="text-gray-600 text-sm">
-                      {feature.description}
-                    </p>
-                  </motion.div>
-                );
-              })}
-            </motion.div>
-          </div>
-        </motion.section>
       </div>
 
       {/* IMPROVED SECTIONS 01-04 */}
-      <div className="min-h-screen bg-white">
+      <div className="min-h-screen mt-12 bg-white">
         <div className="max-w-7xl mx-auto">
           {/* Section 01 & Image - with Full Overlap */}
           <div className="relative" ref={section01Ref}>
@@ -715,6 +648,81 @@ export default function CCTV() {
           </div>
         </div>
       </div>
+      <motion.section
+        initial="initial"
+        whileInView="whileInView"
+        variants={staggerContainer}
+        viewport={{ once: true, amount: 0.2 }}
+        className="bg-gray-50 text-black py-20 md:py-28"
+      >
+        <div className="max-w-5xl mx-auto px-6 text-center">
+          <motion.h2
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{
+              duration: 1,
+              ease: [0.25, 0.1, 0.25, 1],
+              delay: 0.2,
+            }}
+            className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 mb-2"
+          >
+            Why choose Bright<span className="text-blue-900">elv</span> for CCTV
+            installation
+          </motion.h2>
+          <motion.div
+            initial={{ width: 0, opacity: 0 }}
+            whileInView={{ width: 48, opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{
+              duration: 1.2,
+              ease: [0.25, 0.1, 0.25, 1],
+              delay: 0.4,
+            }}
+            className="h-1 bg-blue-900 mx-auto"
+          ></motion.div>
+
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={staggerContainer}
+            viewport={{ once: true, amount: 0.2, margin: "-100px" }}
+            className="grid grid-cols-1 mt-12 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
+            {features.map((feature, idx) => {
+              const isEven = idx % 2 === 0;
+              const cardAnim = isEven ? fadeInLeft : fadeInRight;
+              return (
+                <motion.div
+                  key={idx}
+                  variants={cardAnim}
+                  transition={{ duration: 0.9, ease: [0.25, 0.1, 0.25, 1] }}
+                  className={`p-6  bg-white border border-gray-200 ${
+                    idx === features.length - 1 && features.length % 3 === 1
+                      ? "lg:col-start-2"
+                      : ""
+                  }`}
+                >
+                  <div className="text-blue-900 mb-3">
+                    {React.isValidElement(feature.icon)
+                      ? React.cloneElement(
+                          feature.icon as React.ReactElement<any>,
+                          {
+                            className: "w-8 h-8",
+                          }
+                        )
+                      : feature.icon}
+                  </div>
+                  <h4 className="text-base font-semibold mb-2 text-black">
+                    {feature.title}
+                  </h4>
+                  <p className="text-gray-600 text-sm">{feature.description}</p>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </motion.section>
     </>
   );
 }

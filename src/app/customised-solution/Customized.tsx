@@ -239,7 +239,7 @@ const Customized = () => {
 
                   <motion.div variants={fadeInUp} className="pt-4">
                     <Link
-                      href="/contact"
+                      href="/customised-solution/kiosk-stand-maker"
                       className="inline-block bg-transparent border border-blue-900 text-blue-900 px-4 py-2  text-sm shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 hover:text-white focus:ring-blue-800"
                       aria-label="Enquire about Custom Portable Mixer Racks"
                     >
@@ -263,7 +263,7 @@ const Customized = () => {
 
                   <motion.div variants={fadeInUp} className="pt-4">
                     <Link
-                      href="/contact"
+                      href="/customised-solution/custom-face-plates"
                       className="inline-block bg-transparent border border-blue-900 text-blue-900 px-4 py-2  text-sm shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 hover:text-white focus:ring-blue-800"
                       aria-label="Enquire about Custom Portable Mixer Racks"
                     >
@@ -295,7 +295,7 @@ const Customized = () => {
 
                 <motion.div variants={fadeInUp} className="pt-4">
                   <Link
-                    href="/contact"
+                    href="/customised-solution/custom-pop-up-box"
                     className="inline-block bg-transparent border border-blue-900 text-blue-900 px-4 py-2  text-sm shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 hover:text-white focus:ring-blue-800"
                     aria-label="Enquire about Custom Portable Mixer Racks"
                   >
@@ -353,7 +353,7 @@ const Customized = () => {
 
                 <motion.div variants={fadeInUp} className="pt-4">
                   <Link
-                    href="/contact"
+                    href="/customised-solution/av-racks"
                     className="inline-block bg-transparent border border-blue-900 text-blue-900 px-4 py-2  text-sm shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 hover:text-white focus:ring-blue-800"
                     aria-label="Enquire about Custom Portable Mixer Racks"
                   >
@@ -414,7 +414,7 @@ const Customized = () => {
 
                   <motion.div variants={fadeInUp} className="pt-4">
                     <Link
-                      href="/contact"
+                      href="/customised-solution/cctv"
                       className="inline-block bg-transparent border border-blue-900 text-blue-900 px-4 py-2  text-sm shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 hover:text-white focus:ring-blue-800"
                       aria-label="Enquire about Custom Portable Mixer Racks"
                     >
@@ -438,7 +438,7 @@ const Customized = () => {
 
                   <motion.div variants={fadeInUp} className="pt-4">
                     <Link
-                      href="/contact"
+                      href="/customised-solution/custom-flight-wooden-podium"
                       className="inline-block bg-transparent border border-blue-900 text-blue-900 px-4 py-2  text-sm shadow-sm hover:bg-blue-800 focus:outline-none focus:ring-2 hover:text-white focus:ring-blue-800"
                       aria-label="Enquire about Custom Portable Mixer Racks"
                     >
